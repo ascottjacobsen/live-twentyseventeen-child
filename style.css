@@ -1,0 +1,791 @@
+    /*
+    Theme name: TwentySeventeen Child Theme
+    Theme URI: https://wordpress.org/themes/twentyseventeen/
+    Description: A child theme of Wordpress TwentySeventeen adapted for GEM UK
+    Author: Alex Jacobsen
+    Author URI: ajacobsen@gemission.org.uk
+    Template: twentyseventeen
+    Version: 0.1.0
+    */
+@import url("../twentyseventeen/style.css");
+@import url("themes/twentyseventeen-child/assets/css/serving.css");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600, 800, 900");
+/*-----------------------------------------------------------------------------
+ * 1.0 Root Variables and body text
+ * -----------------------------------------------------------------------------*/
+
+body {
+	  font-family: 'Montserrat', sans-serif;
+	    font-weight: 200;
+	      line-height: 1.9; }
+
+	      h2 {
+		        font-size: 2.5em;
+			  font-weight: 700; }
+
+			  @media screen and (min-width: 30em) {
+				    h2 {
+					        font-size: 2.5em; } }
+
+						.h2--less-margin {
+							  margin-bottom: 10px; }
+
+							  /*-----------------------------------------------------------------------------							   * 2.0 Front Page Header & Site Branding Area
+							   * -----------------------------------------------------------------------------*/
+/* Show main header only on home page */
+.site-branding {
+	  display: none; }
+
+	  .has-header-image.twentyseventeen-front-page .custom-header {
+		    height: 100vh; }
+
+		    .home .site-branding {
+			      display: inherit;
+			        background: rgba(0, 0, 0, 0.50196);
+				  text-align: center; }
+
+				  .has-header-image.twentyseventeen-front-page .site-branding {
+					    vertical-align: middle; }
+
+					    @media screen and (min-width: 56em) {
+						      .has-header-image.twentyseventeen-front-page .site-branding {
+							          vertical-align: bottom; } }
+
+								  @media screen and (min-width: 700px) {
+									    .site-branding .wrap {
+										        display: -webkit-box;
+											    display: -ms-flexbox;
+											        display: flex;
+												    margin-top: 40px; } }
+
+												    @media screen and (min-width: 48em) {
+													      .has-header-image.twentyseventeen-front-page .site-branding {
+														          top: 0; } }
+
+															  /* -----------Search Bar & Widget------------*/
+															  /* Top widget will only display at screen width 56em, otherwise search widget
+															   *   is shown under site description text */
+#search-widget-top {
+	  display: none; }
+
+	  #search-widget-bottom {
+		    width: 100%;
+		      padding: 1em;
+		        display: -webkit-box;
+			  display: -ms-flexbox;
+			    display: flex;
+			      -webkit-box-pack: center;
+			            -ms-flex-pack: center;
+				              justify-content: center; }
+
+					      input[type="search"] {
+						        width: 160px;
+							  height: 36px;
+							    padding: 0 0 0 10px;
+							      background: #fff;
+							        color: #86aa49;
+								  border-radius: 1.5em;
+								    -webkit-transition: width .5s ease-in-out;
+								      transition: width .5s ease-in-out; }
+
+								      input[type="search"]:focus {
+									        color: #86aa49;
+										  border: none;
+										    -webkit-box-shadow: inset 1px 1px 5px #86aa49;
+										              box-shadow: inset 1px 1px 5px #86aa49;
+											        width: 300px;
+												  -webkit-transition: width .5s ease-in-out;
+												    transition: width .5s ease-in-out; }
+
+												    ::-webkit-input-placeholder {
+													      color: #86aa49;
+													        font-weight: 400; }
+
+														::-ms-input-placeholder {
+															  color: #86aa49;
+															    font-weight: 400; }
+
+															    ::placeholder {
+																      color: #86aa49;
+																        font-weight: 400; }
+
+																	.search-widget button {
+																		  background-color: rgba(34, 34, 34, 0); }
+
+																		  .search-form .search-submit {
+																			    background-color: rgba(34, 34, 34, 0); }
+
+																			    .search-form label {
+																				      margin-bottom: 0px; }
+
+																				      @media screen and (min-width: 700px) {
+																					        #search-widget-top {
+																							    display: -webkit-box;
+																							        display: -ms-flexbox;
+																								    display: flex;
+																								        -webkit-box-pack: end;
+																									        -ms-flex-pack: end;
+																										            justify-content: flex-end;
+																											        margin: 0 30px 0 30px; } }
+
+																												@media screen and (min-width: 1000px) {
+																													  #search-widget-top {
+																														      margin: 0 10vh 0 10vh; } }
+
+																														      @media screen and (min-width: 700px) {
+																															        #search-widget-bottom {
+																																	    display: none; } }
+
+																																	    @media screen and (min-width: 56em) {
+																																		      input[type="search"] {
+																																			          width: 150px; } }
+
+																																				  .search-form .search-submit {
+																																					    bottom: 0px;
+																																					      padding: 0.5em 0.5em;
+																																					        position: absolute;
+																																						  right: 3px;
+																																						    top: -3px; }
+
+																																						    .search-form .search-submit .icon {
+																																							      height: 20px;
+																																							        top: 0px;
+																																								  width: 20px; }
+
+																																								  /* -----------Main GEM Logo------------*/
+																																								  /* Animation */
+																																								  @-webkit-keyframes slide-title {
+																																									    0% {
+																																										        left: 500px; }
+																																											  100% {
+																																												      left: 0px; } }
+																																												      @keyframes slide-title {
+																																													        0% {
+																																															    left: 500px; }
+																																															      100% {
+																																																          left: 0px; } }
+
+																																																	  @-webkit-keyframes draw-border {
+																																																		    0% {
+																																																			        height: 0%; }
+																																																				  100% {
+																																																					      height: 100%; } }
+
+																																																					      @keyframes draw-border {
+																																																						        0% {
+																																																								    height: 0%; }
+																																																								      100% {
+																																																									          height: 100%; } }
+
+																																																										  .masthead-image-container {
+																																																											    padding: 0;
+																																																											      display: -webkit-box;
+																																																											        display: -ms-flexbox;
+																																																												  display: flex;
+																																																												    -webkit-box-pack: center;
+																																																												          -ms-flex-pack: center;
+																																																													            justify-content: center;
+																																																														      position: relative; }
+
+																																																														      @media screen and (min-width: 700px) {
+																																																															        .masthead-image-container {
+																																																																	    overflow: hidden;
+																																																																	        width: 800px;
+																																																																		    -webkit-box-pack: end;
+																																																																		            -ms-flex-pack: end;
+																																																																			                justify-content: flex-end; } }
+
+																																																																					@media screen and (min-width: 700px) {
+																																																																						  .masthead-image-container::after {
+																																																																							      content: "";
+																																																																							          height: 0%;
+																																																																								      position: absolute;
+																																																																								          width: 5px;
+																																																																									      background-color: #fff;
+																																																																									          right: 0px;
+																																																																										      -webkit-animation: draw-border .5s;
+																																																																										                  animation: draw-border .5s;
+																																																																												      -webkit-animation-fill-mode: forwards;
+																																																																												                  animation-fill-mode: forwards;
+																																																																														      -webkit-animation-delay: 1s;
+																																																																														                  animation-delay: 1s; } }
+
+																																																																																  #gem-logo {
+																																																																																	    width: 35vw; }
+
+																																																																																	    @media screen and (min-width: 700px) {
+																																																																																		      #gem-logo {
+																																																																																			          position: relative;
+																																																																																				      top: 0;
+																																																																																				          left: 500px;
+																																																																																					      width: 28vw;
+																																																																																					          margin-bottom: 0px;
+																																																																																						      margin-right: 24px;
+																																																																																						          -webkit-animation: slide-title 1s ease-out;
+																																																																																							              animation: slide-title 1s ease-out;
+																																																																																								          -webkit-animation-fill-mode: forwards;
+																																																																																									              animation-fill-mode: forwards;
+																																																																																										          -webkit-animation-delay: 2s;
+																																																																																											              animation-delay: 2s; } }
+
+																																																																																												      /* -----------Site Branding/Site Description Text ------------*/
+																																																																																												      @media screen and (min-width: 700px) {
+																																																																																													        .has-header-image.twentyseventeen-front-page .site-branding {
+																																																																																															    padding-top: calc(33vh - 77px);
+																																																																																															        padding-bottom: calc(33vh + 77px); } }
+
+																																																																																																.site-title {
+																																																																																																	  display: none; }
+
+																																																																																																	  body:not(.title-tagline-hidden) .site-branding-text {
+																																																																																																		    display: -webkit-box;
+																																																																																																		      display: -ms-flexbox;
+																																																																																																		        display: flex;
+																																																																																																			  -webkit-box-align: center;
+																																																																																																			        -ms-flex-align: center;
+																																																																																																				          align-items: center; }
+
+																																																																																																					  body.has-header-image .site-description, body.has-header-video .site-description {
+																																																																																																						    color: #fff;
+																																																																																																						      font-size: 3vw;
+																																																																																																						        position: relative;
+																																																																																																							  font-weight: 300;
+																																																																																																							    text-align: center;
+																																																																																																							      padding: 0em 2em 1em 2em;
+																																																																																																							        opacity: 1; }
+
+																																																																																																								@media screen and (min-width: 700px) {
+																																																																																																									  body.has-header-image .site-description, body.has-header-video .site-description {
+																																																																																																										      font-size: 24px;
+																																																																																																										          text-align: left;
+																																																																																																											      padding: 0em 0em 0em .8em; } }
+
+																																																																																																											      @media screen and (min-width: 1000px) {
+																																																																																																												        .search-and-title-container {
+																																																																																																														    display: grid;
+																																																																																																														        grid-template-columns: 1fr;
+																																																																																																															    grid-template-rows: 80px 1fr;
+																																																																																																															        margin: 0px auto;
+																																																																																																																    width: 90vw;
+																																																																																																																        max-width: 1000px; } }
+
+																																																																																																																	/*-----------------------------------------------------------------------------
+																																																																																																																	 * 2.0 Main Navigation Menu
+																																																																																																																	 * -----------------------------------------------------------------------------*/
+.navigation-top {
+	  z-index: 3;
+	    position: absolute;
+	      bottom: 0;
+	        width: 100%; }
+
+		/* Menu logo: opacity 0 until nav menu sticky at top of window */
+		.logo-container {
+			  opacity: 0;
+			    min-width: 46px;
+			      position: absolute;
+			        left: 122px;
+				  -webkit-transition: opacity 0.5s linear;
+				    transition: opacity 0.5s linear;
+				      /* padding-right: 12px; */
+				      top: 14px; }
+
+				      @media screen and (min-width: 56em) {
+					        .site-navigation-fixed .logo-container {
+							    opacity: 1; } }
+
+							    #menu-logo {
+								      width: 38px; }
+
+								      /*----------Main Navigation Styles----------*/
+								      ul#top-menu {
+									        text-align: center; }
+
+										ul#top-menu a {
+											  color: #86aa49;
+											    -webkit-transition: opacity 0.3s;
+											      transition: opacity 0.3s; }
+
+											      ul#top-menu a:hover {
+												        opacity: 0.5;
+													  -webkit-transition: opacity 0.3s;
+													    transition: opacity 0.3s; }
+
+													    .icon {
+														      fill: #86aa49; }
+
+														      .icon:hover {
+															        fill: #C8F265; }
+
+																/*-----------------------------------------------------------------------------
+																 * 3.0 Front Page Content
+																 * -----------------------------------------------------------------------------*/
+.home header.entry-header {
+	  display: none; }
+
+	  h1.page-title, h2.widget-title {
+		    color: #86aa49; }
+
+		    h2.entry-title {
+			      display: none; }
+
+			      .entry-content-front-page {
+				        margin-bottom: 3em;
+					  text-align: center; }
+
+					  .front-page-container a, .front-page-container a h3 {
+						    -webkit-transition: opacity 0.3s;
+						      transition: opacity 0.3s; }
+
+						      .front-page-container a:hover, .front-page-container a h3:hover {
+							        opacity: 0.5;
+								  -webkit-transition: opacity 0.3s;
+								    transition: opacity 0.3s; }
+
+								    /*----------First Section----------*/
+								    .front-page-container {
+									      text-align: center;
+									        margin-bottom: 3em; }
+
+										@media screen and (min-width: 48em) {
+											  .front-page-container {
+												      grid-column-start: 1;
+												          grid-column-end: 6;
+													      grid-template-columns: .5fr 1fr 1fr 1fr .5fr; } }
+
+													      .front-page-container h2 {
+														        line-height: 1.6em;
+															  grid-column-start: 2;
+															    grid-column-end: 5;
+															      font-weight: 400; }
+
+															      /*----------Circles Section----------*/
+															      .front-page-container + div {
+																        grid-column-start: 2; }
+
+																	.front-page-article {
+																		  padding: 4em;
+																		    padding-top: 1em;
+																		      padding-bottom: 1em; }
+
+																		      .front-page-article img {
+																			        height: auto;
+																				  width: 14vw;
+																				    max-width: 20vw;
+																				      min-width: 191px; }
+
+																				      .front-page-article img:hover, .front-page-article h2:hover, .front-page-article p:hover {
+																					        opacity: .5;
+																						  -webkit-transition: opacity .2s ease;
+																						    transition: opacity .2s ease; }
+
+																						    .front-page-article a h2 {
+																							      margin-top: 1em; }
+
+																							      #section-4 {
+																								        grid-column-start: 2; }
+
+																									/*----------Donate Section----------*/
+																									div#section-7 {
+																										  background: #86aa49;
+																										    margin-bottom: 3em; }
+
+																										    @media screen and (min-width: 56em) {
+																											      div#section-7 {
+																												          padding: 8em 16em 8em 16em; } }
+
+																													  #section-7 h2 {
+																														    color: #fff;
+																														      font-size: 23vw;
+																														        text-align: center;
+																															  text-transform: uppercase;
+																															    margin-bottom: 0px; }
+
+																															    @media screen and (min-width: 56em) {
+																																      #section-7 h2 {
+																																	          font-size: 9em;
+																																		      margin-bottom: .2em; } }
+
+																																		      a.fasc-button.fasc-size-xlarge.fasc-type-flat.fasc-rounded-medium.fasc-style-bold {
+																																			        border: 3px solid; }
+
+																																				/*----------Instagram Section----------*/
+																																				div#section-8 {
+																																					  padding-bottom: 3em; }
+
+																																					  .sbi_header_img img {
+																																						    min-width: 0px; }
+
+																																						    @media screen and (min-width: 56em) {
+																																							      .sbi_header_img img {
+																																								          min-width: 0px; } }
+
+																																									  /* Clear Twenty Seventeen Floats */
+																																									  /* @media screen and (min-width: 56em) {
+																																									   *   body:not(.has-sidebar):not(.page-one-column) .page-header, body.has-sidebar.error404 #primary .page-header, body.page-two-column:not(.archive) #primary .entry-header, body.page-two-column.archive:not(.has-sidebar) #primary .page-header {
+																																									   *       float: none;
+																																									   *           width: 100%;
+																																									   *               text-align: center;
+																																									   *                 }
+																																									   *                 } */
+/* @media screen and (min-width: 56em) {
+ *   .panel-content .wrap {
+ *         padding-bottom: 4.5em;
+ *               padding-top: 0em;
+ *                 }
+ *                 } */
+/*-----------------------------------------------------------------------------
+ * 3.0 Footer
+ * -----------------------------------------------------------------------------*/
+footer#colophon {
+	  background-color: #414042;
+	    margin-top: -1px; }
+
+	    .site-footer a {
+		      color: #fff;
+		        text-decoration: none; }
+
+			/*----------Links Widget----------*/
+			.site-footer .widget-area {
+				  display: grid;
+				    grid-template-columns: 1fr 3fr 1fr;
+				      padding-bottom: 0em;
+				        padding-top: 2em; }
+
+					.widget ul li, .widget ol li {
+						  border-bottom: none;
+						    border-top: none;
+						      padding: 1em;
+						        text-align: center; }
+
+							.widget ul li a:hover, .widget ol li a:hover {
+								  color: #86aa49;
+								    -webkit-box-shadow: inset 0 0 0 #86aa49, 0 3px 0 #86aa49;
+								              box-shadow: inset 0 0 0 #86aa49, 0 3px 0 #86aa49; }
+
+									      @media screen and (min-width: 48em) {
+										        .site-footer .widget-column.footer-widget-1 {
+												    float: none;
+												        width: 100%; } }
+
+													ul#menu-my-favorite-links {
+														  display: -webkit-box;
+														    display: -ms-flexbox;
+														      display: flex;
+														        -webkit-box-orient: vertical;
+															  -webkit-box-direction: normal;
+															        -ms-flex-direction: column;
+																          flex-direction: column;
+																	    -webkit-box-pack: center;
+																	          -ms-flex-pack: center;
+																		            justify-content: center;
+																			      -ms-flex-line-pack: center;
+																			            align-content: center; }
+
+																				    @media screen and (min-width: 56em) {
+																					      ul#menu-my-favorite-links {
+																						          -webkit-box-orient: horizontal;
+																							      -webkit-box-direction: normal;
+																							              -ms-flex-direction: row;
+																								                  flex-direction: row;
+																										      -ms-flex-wrap: wrap;
+																										              flex-wrap: wrap;
+																											          -webkit-box-pack: space-evenly;
+																												          -ms-flex-pack: space-evenly;
+																													              justify-content: space-evenly;
+																														          -webkit-box-align: baseline;
+																															          -ms-flex-align: baseline;
+																																              align-items: baseline;
+																																	          min-width: 600px; } }
+
+																																		  /*----------Social Links Widget----------*/
+																																		  ul#menu-social-menus {
+																																			    display: -webkit-box;
+																																			      display: -ms-flexbox;
+																																			        display: flex;
+																																				  -webkit-box-pack: center;
+																																				        -ms-flex-pack: center;
+																																					          justify-content: center; }
+
+																																						  @media screen and (min-width: 48em) {
+																																							    .social-navigation {
+																																								        float: none;
+																																									    margin-bottom: 0;
+																																									        width: 100%; } }
+
+																																										@media screen and (min-width: 56em) {
+																																											  .social-navigation + .site-info {
+																																												      margin-left: 0px; } }
+
+																																												      @media screen and (min-width: 56em) {
+																																													        .site-info {
+																																															    float: none;
+																																															        padding: 2em 0 0;
+																																																    width: 100%; } }
+
+																																																    /*----------Site Info Section----------*/
+																																																    .site-info {
+																																																	      text-align: center; }
+
+																																																	      @media screen and (min-width: 48em) {
+																																																		        .social-navigation + .site-info {
+																																																				    margin-left: 0%; } }
+
+																																																				    @media screen and (min-width: 48em) {
+																																																					      .site-info {
+																																																						          float: none;
+																																																							      padding: 2.7em 0 0;
+																																																							          width: 100%; } }
+
+																																																								  /*-----------------------------------------------------------------------------
+																																																								   * 4.0 Sub Pages
+																																																								   * -----------------------------------------------------------------------------*/
+/* styles for no header image page */
+.entry-header-no-image h1 {
+	  margin-top: 1em; }
+
+	  /*----------Page Headers----------*/
+	  .page:not(.home) {
+		    padding-top: 0em; }
+
+		    @media screen and (min-width: 56em) {
+			      .page:not(.home) #content {
+				          padding-bottom: 0;
+					      padding-top: 0em; } }
+
+					      .header-wrap {
+						        min-height: 450px; }
+
+							.wrap-bg-overlay {
+								  min-height: 450px;
+								    background: rgba(255, 255, 255, 0.61176);
+								      width: 100%;
+								        display: -webkit-box;
+									  display: -ms-flexbox;
+									    display: flex;
+									      -webkit-box-orient: vertical;
+									        -webkit-box-direction: normal;
+										      -ms-flex-direction: column;
+										                flex-direction: column;
+												  -webkit-box-pack: center;
+												        -ms-flex-pack: center;
+													          justify-content: center;
+														    -webkit-box-align: center;
+														          -ms-flex-align: center;
+															            align-items: center; }
+
+																    .single-featured-image-header {
+																	      height: 300px; }
+
+																	      .page.page-one-column:not(.twentyseventeen-front-page) #primary {
+																		        margin-left: 0px;
+																			  margin-right: 0px;
+																			    max-width: none; }
+
+																			    body.page:not(.twentyseventeen-front-page) .entry-title {
+																				      color: #414042;
+																				        font-size: 5em;
+																					  text-align: center;
+																					    font-weight: 800;
+																					      text-transform: none;
+																					        margin-bottom: 0px;
+																						  letter-spacing: 3px; }
+
+																						  h2.subheading {
+																							    padding-top: 0em;
+																							      padding-left: 5em;
+																							        padding-right: 5em;
+																								  color: #414042;
+																								    text-align: center;
+																								      text-shadow: 0px 0px 28px rgba(255, 255, 255, 0.41961); }
+
+																								      @media screen and (min-width: 56em) {
+																									        .subheading h2 {
+																											    padding-left: 3em;
+																											        padding-right: 3em;
+																												    padding-top: 1em;
+																												        color: #414042; } }
+
+																													.h2--white, .h3--white {
+																														  color: #fff; }
+
+																														  .h3--big {
+																															    font-size: 2em; }
+
+																															    /*----------Entry Content Area----------*/
+																															    .margin-wrap {
+																																      margin-left: 3em;
+																																        margin-right: 3em; }
+
+																																	@media screen and (min-width: 780px) {
+																																		  .margin-wrap {
+																																			      margin-left: 0px;
+																																			          margin-right: 0px; } }
+
+																																				  .page:not(.home) #content {
+																																					    padding-bottom: 0; }
+
+																																					    .entry-content {
+																																						      max-width: 1260px;
+																																						        margin-left: 1em;
+																																							  margin-right: 1em; }
+
+																																							  .entry-content-full-width {
+																																								    max-width: none;
+																																								      margin-left: 0;
+																																								        margin-right: 0; }
+
+																																									.wrap-full-page .entry-content-grid {
+																																										  display: grid;
+																																										    grid-template-columns: 1fr 10fr 1fr;
+																																										      max-width: none; }
+
+																																										      .page-template-page-full-width .ugb-container .ugb-container__content-wrapper {
+																																											        padding-left: 15vw;
+																																												  padding-right: 15vw; }
+
+																																												  .section-container {
+																																													    grid-column-start: 1;
+																																													      grid-column-end: 4;
+																																													        display: grid;
+																																														  grid-template-columns: 1fr 5fr 1fr;
+																																														    width: 100%; }
+
+																																														    .section-container-content {
+																																															      padding: 1.4em;
+																																															        grid-column-start: 2;
+																																																  grid-column-end: 3;
+																																																    padding-top: 7.5em;
+																																																      padding-bottom: 7.5em; }
+
+																																																      .section-container:nth-of-type(1) {
+																																																	        padding-top: 1em; }
+
+																																																		.section-container:nth-child(even) {
+																																																			  background-color: #f6f9f0; }
+
+																																																			  .section-container-content h2 {
+																																																				    text-align: center; }
+
+																																																				    .section-container img {
+																																																					      display: block;
+																																																					        margin: 0 auto;
+																																																						  justify-self: center; }
+
+																																																						  .section-container h2 {
+																																																							    grid-column-start: 2;
+																																																							      grid-column-end: 3; }
+
+																																																							      .section-container p {
+																																																								        grid-column-start: 2;
+																																																									  grid-column-end: 3; }
+
+																																																									  .address-left-of-map {
+																																																										    line-height: .5em; }
+
+																																																										    /*-----------------------------------------------------------------------------
+																																																										     * 4.0 Serving Opportunities Pods
+																																																										     * -----------------------------------------------------------------------------*/
+.serving-opportunity-list-container {
+	  display: grid;
+	    grid-template-columns: 1fr;
+	      max-width: 1000px;
+	        margin-left: auto;
+		  margin-right: auto; }
+
+		  .serving-opportunity-cover {
+			    background-size: cover;
+			      width: 90vw;
+			        height: 90vw;
+				  line-height: 300px;
+				    vertical-align: middle; }
+
+				    @media screen and (min-width: 500px) {
+					      .serving-opportunity-cover {
+						          height: 300px; } }
+
+							  @media screen and (min-width: 1000px) {
+								    .serving-opportunity-cover {
+									        width: 300px;
+										    height: 300px; } }
+
+										    .serving-opportunity-cover h2 {
+											      font-size: 6em;
+											        font-weight: 900;
+												  line-height: 86px;
+												    vertical-align: middle;
+												      display: inline-block;
+												        -webkit-box-pack: center;
+													  -ms-flex-pack: center;
+													    justify-content: center;
+													      margin: 0;
+													        text-transform: uppercase;
+														  opacity: 0.8;
+														    word-break: break-word; }
+
+														    .serving-opportunity-list-container * h2 {
+															      visibility: hidden; }
+
+															      @media screen and (min-width: 1000px) {
+																        .serving-opportunity-cover h2 {
+																		    font-size: 7em;
+																		        line-height: 88px; } }
+
+																			@media screen and (min-width: 1000px) {
+																				  .serving-opportunity-list-container {
+																					      display: grid;
+																					          grid-template-columns: 300px 2fr;
+																						      grid-template-rows: 300px; } }
+
+																						      .serving-opportunity-cover img {
+																							        width: 100%; }
+
+																								.serving-opportunity-data h3 {
+																									  font-size: 2.5em;
+																									    margin-bottom: 15px; }
+
+																									    @media screen and (min-width: 1000px) {
+																										      .serving-opportunity-data {
+																											          margin-top: -10px; } }
+
+																												  .serving-opportunity-data p {
+																													    margin-bottom: 10px; }
+
+																													    @media screen and (min-width: 1000px) {
+																														      .serving-opportunity-data {
+																															          margin-left: 10px; } }
+
+																																  .serving-opportunity-description {
+																																	    text-align: center;
+																																	      margin-bottom: 30px; }
+
+																																	      .serving-opportunity-description p {
+																																		        text-align: left; }
+
+																																			@media screen and (min-width: 1000px) {
+																																				  .serving-opportunity-description {
+																																					      grid-column-start: 1;
+																																					          grid-column-end: 3; } }
+
+																																						  .serving-opportunity-description button:hover {
+																																							    opacity: 0.5;
+																																							      -webkit-transition: opacity .2s ease;
+																																							        transition: opacity .2s ease; }
+
+																																								.serving-opportunity-description button a {
+																																									  color: #fff;
+																																									    text-decoration: none;
+																																									      -webkit-box-shadow: none;
+																																									                box-shadow: none;
+																																											  font-size: 1.5em; }
+
+																																											  .serving-opportunity-description button {
+																																												    background-color: #86aa49;
+																																												      -webkit-transition: opacity .2s ease;
+																																												        transition: opacity .2s ease;
+																																													  margin-top: 20px;
+																																													    padding: 20px; }
+
+																																													    div.serving-opportunity-list-container:not(:last-of-type) {
+																																														      border-bottom: 1px solid #f6f9f0;
+																																														        margin-bottom: 40px; }
+
