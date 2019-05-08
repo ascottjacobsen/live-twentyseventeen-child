@@ -273,7 +273,7 @@ body.has-header-image .site-description, body.has-header-video .site-description
 /*-----------------------------------------------------------------------------
 2.0 Main Navigation Menu
 -----------------------------------------------------------------------------*/
-.navigation-top {
+.navigation-top-front-page {
   z-index: 3;
   position: absolute;
   bottom: 0;
