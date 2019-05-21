@@ -1,23 +1,24 @@
 // Script to create map interactivity for serving opporunities page
 window.onload = function(){ 
     // Setup selectors
-    let prevCountry;
     let countrySelector = document.getElementById('country-select')
     
+    
 
-    //add event listener for drop down
+    //add event listeners
+   
     countrySelector.addEventListener('change', function(e){
         let country = e.target.value
               
         let requestOpportunities = new XMLHttpRequest();
-        requestOpportunities.open('GET', 'http://dev.gemuk.dev.cc/wp-json/wp/v2/serving_opportunity/');
+        requestOpportunities.open('GET', '/wp-json/wp/v2/serving_opportunity/');
         requestOpportunities.onload = function() {
             let opportunityData = JSON.parse(requestOpportunities.responseText)
             renderHTML(opportunityData, country)
         }
 
         requestOpportunities.send();
-
+        
     })
 }
 
@@ -30,115 +31,134 @@ function renderHTML(data, countryName) {
     }
 
     buildCountryContainer(countryContainer, country, data)
-
-    
 }
 
 function buildCountryContainer(container, country, countryData) {
     
     //build node to return message if no matches found
-    let matchCounter = 0;
+    let noMatchContainer = document.createElement('div')
     let noMatchMessage = document.createElement('p')
     noMatchMessage.classList.add('no-match')
-    noMatchMessage.innerHTML = "Sorry, we currently have no opportunities in that country."
+    noMatchMessage.innerHTML = "Sorry, we currently have no opportunities in " + (country === "United Kingdom" ? "The " + country : country) + ". Please contact us below and let us know how we can help."
+
+    let noMatchMessageButton = document.createElement('button')
+    let noMatchLink = document.createElement('a')
+    noMatchLink.setAttribute('href', '/contact-us/?subject=looking-for-new-opportunities')
+    noMatchLink.innerHTML = "Contact Us"
+    noMatchMessageButton.appendChild(noMatchLink)
+
+    noMatchContainer.appendChild(noMatchMessage)
+    noMatchContainer.appendChild(noMatchMessageButton)
 
     //build individual nodes
     let countryInfo = document.createElement('div')
-    countryInfo.classList.add('country-info')
+    countryInfo.classList.add('country-info', 'hidden-div')
+    countryInfo.setAttribute('id', 'current-country-info')
 
-    let closeContainer = document.createElement('span')
-    closeContainer.innerHTML = 'x'
-    closeContainer.classList.add('close-container')
-    countryInfo.appendChild(closeContainer)
-    closeContainer.addEventListener("click", function(e){
-        countryInfo.classList.add('hidden-div');
-        // countryInfo.remove();
+    let closeContainerButton = document.createElement('span')
+    closeContainerButton.innerHTML = 'x'
+    closeContainerButton.classList.add('close-container')
+    countryInfo.appendChild(closeContainerButton)
+    
+
+    closeContainerButton.addEventListener("click", e => {
+        let nodeToClose = e.target.parentElement
+        closeCountryContainer(nodeToClose)
     })
 
     let countryTitle = document.createElement('h2')
     countryTitle.innerHTML = country
+
+    let opportunitiesGrid = document.createElement('div')
+    opportunitiesGrid.classList.add('opportunities-grid')
     countryInfo.appendChild(countryTitle)
+    countryInfo.appendChild(opportunitiesGrid)
 
     //add above nodes to the container
     container.appendChild(countryInfo)
 
-    countryData.map(opportunity => {
-        if (opportunity.country === country) {
-            matchCounter++
-        }
-    })
+    let countryOppsList = countryData.filter(opp => opp.country === country)
+    countryOppsList == 0 ? countryInfo.appendChild(noMatchContainer) : buildCountryInfo(countryOppsList)
 
-    if (matchCounter == 0 ) {
-        countryInfo.appendChild(noMatchMessage)
-    } else {
-        countryData.map(opportunity => {
-            if (opportunity.country === country) {
+    function buildCountryInfo(countryList) {
+        countryList.map(opportunity => {
+
+            
+                let featuredImageUrl = opportunity.uagb_featured_image_src.full[0] ? 'url(' + opportunity.uagb_featured_image_src.medium_large[0] + ')' : 'url(' + '/wp-content/uploads/2019/05/GEM-square-only.png' + ')'
+
+                let oppContainer = document.createElement('div')
+                let oppHero = document.createElement('div')
+                let coverTitle = document.createElement('h3')
+                let fullTitle = document.createElement('h3')
+                let location = document.createElement('h4')
+                let time = document.createElement('p')
                 let description = document.createElement('p')
+                let actionButton = document.createElement('button')
+                let actionLink = document.createElement('a')
+                
+                fullTitle.innerHTML = opportunity.full_title
+                location.innerHTML = opportunity.location + ' | ' + opportunity.time
+                time.innerHTML = opportunity.time
                 description.innerHTML = opportunity.description
-                countryInfo.appendChild(description)
+                actionLink.setAttribute('href', opportunity.action_link)
+                actionLink.setAttribute('target', "_blank")
+                actionLink.innerHTML = "Go Now!"
+                actionButton.appendChild(actionLink)
 
-            }
+                oppContainer.classList.add('opportunity-container')
+                oppHero.classList.add('opp-hero')
 
+                oppHero.style.backgroundImage = featuredImageUrl
+
+                oppContainer.appendChild(oppHero)
+                oppContainer.appendChild(fullTitle)
+                oppContainer.appendChild(location)
+                // oppContainer.appendChild(time)
+                oppContainer.appendChild(description)
+                oppContainer.appendChild(actionButton)
+                opportunitiesGrid.appendChild(oppContainer)
+
+
+                
         })
     }
+    setTimeout(function(){
+        document.getElementById('form-group').classList.add('blur')
+        countryInfo.classList.remove('hidden-div')
+    }, 50)
+
+    let page = document.getElementById('page')
+    page.addEventListener('click', e => {
+
+        if (e.target.id != "current-country-info") {
+            let theParent = document.getElementById('current-country-info')
+            let theChild = e.target
+            
+            if (!isDescendant(theParent, theChild)) {
+                closeCountryContainer(countryInfo)
+            }
+        } 
+    })
+}
+
+function closeCountryContainer (container) {
+    let containerToClose = container
+    containerToClose.classList.add('hidden-div')
+    document.getElementById('form-group').classList.remove('blur')
+
+    setTimeout(function() {
+        containerToClose.remove()
+    }, 200)
 
 }
 
-
-
-//create div and header for the country information
-    // let countryInfo = document.createElement('div');
-    // countryInfo.classList.add('country-info',)
-
-    // let closeContainer = document.createElement('span')
-    // closeContainer.innerHTML = 'x'
-    // closeContainer.classList.add('close-container')
-    
-    // let countryInfoTitle = document.createElement('h2')
-    // countryInfoTitle.innerHTML = country;
-
-    // let countryInfoDetails = document.createElement('div')
-
-    // countryInfo.appendChild(closeContainer)
-    // countryInfo.appendChild(countryInfoTitle)
-    // countryInfo.appendChild(countryInfoDetails)
-    // countryContainer.appendChild(countryInfo)
-
-    // closeContainer.addEventListener("click", function(e){
-    //     countryInfo.classList.add('hidden-div');
-    //     countryInfo.remove();
-    // })
-
-
-    // data.map(opportunity => {
-
-    //     if (opportunity.country === country) {
-    //         console.log('match! ' + opportunity.country + ' is the same as ' + country)
-    //     }
-
-    //     else {
-    //         console.log('sorry, ' + country + ' doesn\'t contain any matches :(')
-    //     }
-        
-    //     let opportunityContainer = document.createElement('div')
-
-    //     let opportunityCountry = document.createElement('h3')
-    //     opportunityCountry.innerHTML = opportunity.country
-
-    //     let description = document.createElement('p')
-    //     description.innerHTML = opportunity.description
-
-    //     //build opportunity container
-    //     opportunityContainer.appendChild(opportunityCountry)
-    //     // opportunityContainer.appendChild(species)
-    //     opportunityContainer.appendChild(description)
-    //     // opportunityContainer.appendChild(dislikes)
-
-    //     //add opportunity container to countryInfoDetails
-    //     countryInfoDetails.appendChild(opportunityContainer)
-        
-        
-
-    // })
-
-    // countryContainer.appendChild(countryInfo)
+function isDescendant(parent, child) {
+    let node = child.parentNode;
+    while (node != null) {
+        if (node == parent) {
+            return true;
+        }
+        node = node.parentNode;
+    }
+    return false;
+}

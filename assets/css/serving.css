@@ -1,27 +1,83 @@
+.site-content-contain {
+  background: url('http://dev.gemuk.dev.cc/wp-content/uploads/2019/05/zrsjmpt9pni.jpg') center no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 100vh auto;
+  align-items: center;
+}
+
+@media screen and (min-width: 800px) {
+  .site-content-contain {
+    background: url('http://dev.gemuk.dev.cc/wp-content/uploads/2019/05/plane-wing-3.jpeg');
+  }
+}
+
+.site-main {
+  display: flex;
+  justify-content: center;
+}
+
 
 .form-group {
   margin: 2vh 10px;
+  transition: all .2s;
+  text-align: center;
 }
 
-.country-info-container {
-  height: 100vh;
-  position: relative;
+.form-group a, .form-group p {
+  color: #fff;
+  font-weight: 100;
+}
+
+.form-group p {
+  padding: 10px;
+  text-shadow:  0px 0px 3px #000;
+}
+
+@media screen and (min-width: 768px) {
+  .form-group p {
+    font-size: 1.2em;
+  }
+}
+
+.form-group a {
+  text-decoration: underline;
+}
+
+.form-group h2 {
+  color: #fff;
+  font-size: 4em;
+  opacity: .8;
+  margin-bottom: 0px;
+}
+
+.blur {
+  filter: blur(2.4rem);
+  transition: filter .2s;
+}
+
+#country-info-container {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 95vh;
 }
 
 .country-info {
-  position: relative;
   width: 90vw;
-  height: 95vh;
+  max-height: 95vh;
+  position: relative;
+  margin: 60px auto 30px auto;
   border-radius: 10px;
-  margin: 2vh auto;
   padding: 6vw;
-  overflow: scroll;
-  background: #414042;
+  overflow-y: scroll;
+  background: rgba(65, 64, 66, .8);
   color: #fff;
-  opacity: 0.8;
   visibility: visible;
-  transition: height .5s, width .5s, top .5s, opacity .5s ease-in-out;
-  transition-delay: 200ms;
+  opacity: 1;
+  transition: width .3s, height .3s, opacity .3s ease-in-out;
 }
 
 .country-info h2 {
@@ -34,7 +90,7 @@
   }
 }
 
-.country-info h2, .country-info p {
+.country-info h2, .country-info h3, .country-info h4, .country-info p {
   color: #fff;
   opacity: 1;
   transition: opacity 1s;
@@ -42,17 +98,20 @@
 }
 
 .hidden-div {
-  top: 50vh;
+  width: 0vw;
+  height: 0vh;
   opacity: 0;
-  height: 0;
-  width: 0;
-  transition: height .3s, width .3s, top .3s, opacity .3s ease-in-out;
-  transition-delay: 0ms;
+  height: 100px;
+  width: 100px;
+  margin: 0px auto 0px auto;
+  padding: 0;
+  filter: blur(2.4rem);
+  transition: filter .1s;
 }
 
-.hidden-div h2, .hidden-div p {
+.hidden-div div, .hidden-div h2, .hidden-div p {
   opacity: 0;
-  transition: opacity .1s;
+  /* transition: opacity .1s; */
   transition-delay: 0ms;
 }
 
@@ -81,4 +140,58 @@ select option:first-child {
 .close-container:active {
   opacity: .3;
   transition: opacity .2s;
+}
+
+.opportunities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-column-gap: 60px;
+  grid-row-gap: 60px;
+}
+
+.opportunity-container {
+  display: grid;
+  grid-template-rows: 300px 75px 80px auto 100px;
+}
+
+.opportunity-container h3 {
+  padding: 20px 0 0 0;
+  margin: 0;
+}
+
+.opp-hero {
+  width: 100%;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+}
+
+.country-info button {
+  background-color: #86aa49;
+  color: white;
+  text-align: center;
+  margin: 0 auto 30px auto;
+  position: relative;
+  top: calc(50px - 40px);
+  transition: all .2s;
+}
+
+.country-info button:hover {
+  background-color: #b6ce8d;
+}
+
+.country-info button:active {
+  box-shadow: inset 0 0 2px #4d4d4d;
+}
+
+.country-info button a {
+  color: white;
+}
+
+.site-footer {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  border: none;
 }
