@@ -84,7 +84,7 @@ function buildCountryContainer(container, country, countryData) {
         countryList.map(opportunity => {
 
             
-                let featuredImageUrl = opportunity.uagb_featured_image_src.full[0] ? 'url(' + opportunity.uagb_featured_image_src.medium_large[0] + ')' : 'url(' + 'http://lorempixel.com/400/200/sports/1/' + ')'
+                let featuredImageUrl = opportunity.uagb_featured_image_src.full[0] ? 'url(' + opportunity.uagb_featured_image_src.medium_large[0] + ')' : 'url(' + '/wp-content/uploads/2019/05/GEM-square-only.png' + ')'
 
                 let oppContainer = document.createElement('div')
                 let oppHero = document.createElement('div')
