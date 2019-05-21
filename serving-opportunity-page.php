@@ -21,8 +21,8 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
     <section >
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Select Country</label>
+        <div class="form-group" id="form-group">
+          <label for="exampleFormControlSelect1"><h2>Where to?</h2><p>GEM works in countries all across Europe. <a href="#">Let us know</a> if you don't see what you're looking for here.</p></label>
           <select class="form-control" id="country-select">
             <option>select a country</option>
             <option>UK</option>
@@ -44,30 +44,7 @@ get_header(); ?>
           </select>
        </div>
       </section>
-			<section id="country-info-container">
-      
-        <!-- <div class="country-info hidden-div" id="UK">
-          <span class="close-container">x</span>
-          <h2>United Kingdom</h2>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti iure doloribus maiores suscipit repellendus cumque numquam quod. Voluptatum hic ad atque reprehenderit exercitationem, et accusamus rem iste similique quo ab?   
-          </p>
-        </div>
-        <div class="country-info hidden-div" id="France">
-          <span class="close-container">x</span>
-          <h2>France</h2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti iure doloribus maiores suscipit repellendus cumque numquam quod. Voluptatum hic ad atque reprehenderit exercitationem, et accusamus rem iste similique quo ab?
-            </p>
-          </div>
-        <div class="country-info hidden-div" id="Germany">
-          <span id="close-container">x</span>
-          <h2>Germany</h2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti iure doloribus maiores suscipit repellendus cumque numquam quod. Voluptatum hic ad atque reprehenderit exercitationem, et accusamus rem iste similique quo ab?
-            </p>
-        </div> -->
-      </section>
+			<section id="country-info-container"></section>
       
 
 		</main><!-- #main -->
