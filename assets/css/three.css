@@ -1,0 +1,9 @@
+.content-area {
+    background: url('https://www.gemission.org.uk/wp-content/uploads/2019/05/gem-three-bg-small.png') center no-repeat;
+}
+
+@media screen and (min-width: 768px) {
+    .content-area {
+        background: url('https://www.gemission.org.uk/wp-content/uploads/2019/05/gem-three-bg-large.png') center no-repeat;
+    }
+}

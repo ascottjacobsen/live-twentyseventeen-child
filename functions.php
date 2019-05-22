@@ -55,6 +55,10 @@ function enqueue_custom_styles() {
 	if(is_page('serving-opportunities')) {
 		wp_enqueue_style( 'twenty-seventeen-child-serving-css', '/wp-content/themes/twentyseventeen-child/assets/css/serving.css', false );
 	}
+
+	if(is_page('three')) {
+		wp_enqueue_style( 'twenty-seventeen-child-serving-css', '/wp-content/themes/twentyseventeen-child/assets/css/three.css', false );
+	}
 	 
 }
 
