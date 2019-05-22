@@ -655,11 +655,8 @@ h2.subheading {
   padding: 1.4em;
   grid-column-start: 2;
   grid-column-end: 3;
-  padding-top: 7.5em;
+  padding-top: 0;
   padding-bottom: 7.5em; }
-
-.section-container:nth-of-type(1) {
-  padding-top: 1em; }
 
 .section-container:nth-child(even) {
   background-color: #f6f9f0; }

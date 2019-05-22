@@ -21,8 +21,7 @@
 	<!-- Build header div and remove featured image rules -->
 			<header class="entry-header-no-image">
 		     <h1 class="entry-title"><?php the_title(); ?></h1>
-				 <h2 class="subheading"><?php the_field('page-subheading') ?></h2>
-		  </header><!-- .entry-header -->
+		  	</header><!-- .entry-header -->
 	<div class="entry-content">
 
 
