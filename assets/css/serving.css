@@ -1,5 +1,5 @@
 .site-content-contain {
-  background: url('http://dev.gemuk.dev.cc/wp-content/uploads/2019/05/zrsjmpt9pni.jpg') center no-repeat;
+  background: url('/wp-content/uploads/2019/05/zrsjmpt9pni.jpg') center no-repeat;
   background-size: cover;
   min-height: 100vh;
   display: grid;
@@ -9,7 +9,7 @@
 
 @media screen and (min-width: 800px) {
   .site-content-contain {
-    background: url('http://dev.gemuk.dev.cc/wp-content/uploads/2019/05/plane-wing-3.jpeg');
+    background: url('/wp-content/uploads/2019/05/plane-wing-3.jpeg');
   }
 }
 

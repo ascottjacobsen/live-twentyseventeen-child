@@ -42,6 +42,8 @@ get_header(); ?>
             <option>Czech Republic</option>
             <option>Austria</option>
           </select>
+
+      
        </div>
       </section>
 			<section id="country-info-container"></section>
