@@ -438,7 +438,8 @@ div#section-8 {
 -----------------------------------------------------------------------------*/
 footer#colophon {
   background-color: #414042;
-  margin-top: -1px; }
+  margin-top: -1px;
+  border: none; }
 
 .site-footer a {
   color: #fff;
