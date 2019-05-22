@@ -28,6 +28,18 @@
 .form-group a, .form-group p {
   color: #fff;
   font-weight: 100;
+  transition: all .2s;
+}
+
+.form-group a:hover, .form-group a:active {
+  color: #fff;
+  text-shadow: 0px 0px 3px #a2a2a2;
+}
+
+.form-group a:active {
+  color: #fff;
+  text-shadow: 0px 0px 3px #a2a2a2;
+  opacity: .7;
 }
 
 .form-group p {
