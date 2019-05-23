@@ -211,7 +211,7 @@ input[type="search"]:focus {
             animation-delay: 1s; } }
 
 #gem-logo {
-  width: 35vw; }
+  width: 50vw; }
 
 @media screen and (min-width: 700px) {
   #gem-logo {
@@ -584,12 +584,18 @@ ul#menu-social-menus {
 
 body.page:not(.twentyseventeen-front-page) .entry-title {
   color: #414042;
-  font-size: 5em;
+  font-size: 3.6em;
   text-align: center;
   font-weight: 800;
   text-transform: none;
   margin-bottom: 0px;
   letter-spacing: 3px; }
+
+  @media screen and (min-width: 1000px) {
+    body.page:not(.twentyseventeen-front-page) .entry-title {
+      font-size: 5em;
+    }
+  }
 
 h2.subheading {
   padding-top: 0em;
