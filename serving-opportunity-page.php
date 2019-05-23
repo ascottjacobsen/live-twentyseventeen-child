@@ -25,22 +25,11 @@ get_header(); ?>
           <label for="exampleFormControlSelect1"><h2>Where to?</h2><p>Select a country to see how you could be part of GEM. <a href="#">Let us know</a> if you don't see what you're looking for.</p></label>
           <select class="form-control" id="country-select">
             <option>select a country</option>
-            <option>UK</option>
+            
             <option>France</option>
             <option>Germany</option>
             <option>Spain</option>
-            <option>Italy</option>
-            <option>Portugal</option>
             <option>Greece</option>
-            <option>Macedonia</option>
-            <option>Ireland</option>
-            <option>Belgium</option>
-            <option>The Netherlands</option>
-            <option>Norway</option>
-            <option>Sweden</option>
-            <option>Switzerland</option>
-            <option>Czech Republic</option>
-            <option>Austria</option>
           </select>
 
       
