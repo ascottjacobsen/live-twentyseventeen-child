@@ -160,6 +160,20 @@ select option:first-child {
   padding: 0 6vw;
 }
 
+.opportunities-grid {
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 845px) {
+  .opportunities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-column-gap: 60px;
+    grid-row-gap: 60px;
+    padding: 0 6vw;
+  }
+}
+
 .opportunity-container {
   display: grid;
   grid-template-rows: 300px 75px 80px auto 100px;
