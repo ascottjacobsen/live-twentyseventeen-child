@@ -22,7 +22,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
     <section >
         <div class="form-group" id="form-group">
-          <label for="exampleFormControlSelect1"><h2>Where to?</h2><p>Select a country to see how you could be part of GEM. <a href="#">Let us know</a> if you don't see what you're looking for.</p></label>
+          <label for="exampleFormControlSelect1"><h2>Where to?</h2><p>Select a country to see how you could be part of GEM. <a href="/contact-us/?subject=interested-in-gem">Let us know</a> if you don't see what you're looking for.</p></label>
           <select class="form-control" id="country-select">
             <option>select a country</option>
             

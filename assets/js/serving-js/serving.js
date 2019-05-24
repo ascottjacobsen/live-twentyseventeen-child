@@ -11,7 +11,7 @@ window.onload = function(){
         let country = e.target.value
               
         let requestOpportunities = new XMLHttpRequest();
-        requestOpportunities.open('GET', '/wp-json/wp/v2/serving_opportunity/');
+        requestOpportunities.open('GET', '/wp-json/wp/v2/serving_opportunity/?per_page=100');
         requestOpportunities.onload = function() {
             let opportunityData = JSON.parse(requestOpportunities.responseText)
             renderHTML(opportunityData, country)
