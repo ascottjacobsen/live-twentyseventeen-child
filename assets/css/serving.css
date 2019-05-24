@@ -136,19 +136,19 @@ select option:first-child {
     top: 1px;
     font-size: 1.5em;
     font-weight: 900;
-    color: #fff;
+    color: #cacaca;
+    text-shadow: 0 0 3px #4d4d4d;
     text-align: right;
-    opacity: .5;
-    transition: opacity .5s;
+    transition: color .5s;
     cursor: pointer;
 }
 
 .close-container:hover {
-  opacity: 1;
-  transition: opacity .5s;
+  color: #fff;
+  transition: color .5s;
 }
 .close-container:active {
-  opacity: .3;
+  opacity: .8;
   transition: opacity .2s;
 }
 
