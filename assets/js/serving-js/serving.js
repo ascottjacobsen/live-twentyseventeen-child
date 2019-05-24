@@ -95,15 +95,16 @@ function buildCountryContainer(container, country, countryData) {
                 let description = document.createElement('p')
                 let actionButton = document.createElement('button')
                 let actionLink = document.createElement('a')
+                let actionLinkUrl = "window.open('" + opportunity.action_link + "')"
                 
                 fullTitle.innerHTML = opportunity.full_title
                 location.innerHTML = opportunity.location + ' | ' + opportunity.time
                 time.innerHTML = opportunity.time
                 description.innerHTML = opportunity.description
-                actionLink.setAttribute('href', opportunity.action_link)
-                actionLink.setAttribute('target', "_blank")
-                actionLink.innerHTML = "Go Now!"
-                actionButton.appendChild(actionLink)
+                actionButton.setAttribute('onclick', actionLinkUrl)
+                actionButton.setAttribute('target', "_blank")
+                actionButton.innerHTML = "Go Now!"
+                // actionButton.appendChild(actionLink)
 
                 oppContainer.classList.add('opportunity-container')
                 oppHero.classList.add('opp-hero')
