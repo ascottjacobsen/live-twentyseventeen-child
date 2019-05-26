@@ -59,6 +59,13 @@ h2 {
     margin-top: 40px; } }
 
 @media screen and (min-width: 48em) {
+  .site-branding .wrap {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: 48em) {
   .has-header-image.twentyseventeen-front-page .site-branding {
     top: 0; } }
 
@@ -126,11 +133,11 @@ input[type="search"]:focus {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-    margin: 0 30px 0 30px; } }
+    margin: 0; } }
 
 @media screen and (min-width: 1000px) {
   #search-widget-top {
-    margin: 0 10vh 0 10vh; } }
+    margin: 0; } }
 
 @media screen and (min-width: 700px) {
   #search-widget-bottom {
@@ -217,7 +224,7 @@ input[type="search"]:focus {
   #gem-logo {
     position: relative;
     top: 0;
-    left: 500px;
+    left: 1000px;
     width: 28vw;
     margin-bottom: 0px;
     margin-right: 24px;
@@ -229,6 +236,10 @@ input[type="search"]:focus {
             animation-delay: 2s; } }
 
 /* -----------Site Branding/Site Description Text ------------*/
+
+.site-brand-inner-wrap {
+  margin: 0 20px;
+}
 @media screen and (min-width: 700px) {
   .has-header-image.twentyseventeen-front-page .site-branding {
     padding-top: calc(33vh - 77px);
@@ -256,9 +267,13 @@ body.has-header-image .site-description, body.has-header-video .site-description
 
 @media screen and (min-width: 700px) {
   body.has-header-image .site-description, body.has-header-video .site-description {
-    font-size: 24px;
+    font-size: 1.77em;
     text-align: left;
     padding: 0em 0em 0em .8em; } }
+
+@media screen and (min-width: 800px) {
+  body.has-header-image .site-description, body.has-header-video .site-description {
+    font-size: 1.9em;} }
 
 @media screen and (min-width: 1000px) {
   .search-and-title-container {
@@ -419,20 +434,6 @@ div#section-8 {
   .sbi_header_img img {
     min-width: 0px; } }
 
-/* Clear Twenty Seventeen Floats */
-/* @media screen and (min-width: 56em) {
-  body:not(.has-sidebar):not(.page-one-column) .page-header, body.has-sidebar.error404 #primary .page-header, body.page-two-column:not(.archive) #primary .entry-header, body.page-two-column.archive:not(.has-sidebar) #primary .page-header {
-    float: none;
-    width: 100%;
-    text-align: center;
-  }
-} */
-/* @media screen and (min-width: 56em) {
-  .panel-content .wrap {
-      padding-bottom: 4.5em;
-      padding-top: 0em;
-  }
-} */
 /*-----------------------------------------------------------------------------
 3.0 Footer
 -----------------------------------------------------------------------------*/
