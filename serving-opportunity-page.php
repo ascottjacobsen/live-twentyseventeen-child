@@ -21,15 +21,33 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
     <section >
+      <?php
+      //get serving opportunities pod and build variables
+      $servingPod = pods('serving_opportunity');
+      $servingPod->find('name ASC');
+      $countries = array("select a country");
+      ?>
+      <?php while ( $servingPod->fetch() ) : ?>
+        <?php
+          // build array of countries listed in Pods
+          $country = $servingPod->field('country');
+          array_push($countries, $country)
+        ?>
+      <?php endwhile; ?>
+      
+      <?php 
+        //Uniquify the array
+        $filteredCountries = array_unique($countries); 
+      ?>
         <div class="form-group" id="form-group">
           <label for="exampleFormControlSelect1"><h2>Where to?</h2><p>Select a country to see how you could be part of GEM. <a href="/contact-us/?subject=interested-in-gem">Let us know</a> if you don't see what you're looking for.</p></label>
           <select class="form-control" id="country-select">
-            <option>select a country</option>
-            
-            <option>France</option>
-            <option>Germany</option>
-            <option>Spain</option>
-            <option>Greece</option>
+            <?php
+              // Loop through countries array
+              foreach($filteredCountries as $value){
+                  echo "<option>" .  $value . "</option>";
+              }
+            ?>
           </select>
 
       
