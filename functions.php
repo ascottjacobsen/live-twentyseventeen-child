@@ -47,10 +47,6 @@ add_action( 'widgets_init', 'twentyseventeen_child_widgets_init' );
 			wp_enqueue_script('serving-js', '/wp-content/themes/twentyseventeen-child/assets/js/serving-js/serving.js', array('jquery', 'wp-api', 'handlebars'), '', true);
 		}
 
-		if(is_page('serving-opportunities') ) {
-			wp_enqueue_script('fadein-js', '/wp-content/themes/twentyseventeen-child/assets/js/serving-js/fadein.js', array('jquery'), '', true);
-		}
-
 		if( is_page('home')) {
 			wp_enqueue_script('flext-text-js', '/wp-content/themes/twentyseventeen-child/assets/js/flext-text.js', '', true);
 		}

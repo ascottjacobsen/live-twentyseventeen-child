@@ -24,6 +24,7 @@ window.onload = function(){
 
 function renderHTML(data, countryName) {
     let countryContainer = document.getElementById('country-info-container');
+    countryContainer.classList.add('full-width')
     let country = countryName
     
     if (country === 'UK' ) {
@@ -68,17 +69,12 @@ function buildCountryContainer(container, country, countryData) {
                 let thisTag = tagChildren[x]
                 let rect = thisTag.getBoundingClientRect()
                 
-                if (rect.top < (pageTop + 100)) {
-                    console.log(rect.top)
+                if (rect.top < (pageTop + 50)) {
                     thisTag.classList.add('fade-out')
-                    
                     
                 } else {
                     thisTag.classList.remove('fade-out')
                 }
-
-                
-
             }
         }
     })
@@ -183,7 +179,9 @@ function buildCountryContainer(container, country, countryData) {
 function closeCountryContainer (container) {
     let containerToClose = container
     containerToClose.classList.add('hidden-div')
+    containerToClose.parentNode.classList.remove('full-width')
     document.getElementById('form-group').classList.remove('blur')
+    
 
     setTimeout(function() {
         containerToClose.remove()
