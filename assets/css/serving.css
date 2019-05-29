@@ -84,7 +84,7 @@
   margin: 60px auto 30px auto;
   border-radius: 10px;
   overflow-y: scroll;
-  background: rgba(65, 64, 66, .8);
+  background-image: linear-gradient(rgba(65, 64, 66, 1), rgba(65, 64, 66, .8));
   color: #fff;
   visibility: visible;
   opacity: 1;
@@ -92,20 +92,17 @@
 }
 
 .country-info h2 {
-  padding: 20px 6vw 0px 6vw;
+  padding: 50px 6vw 0px 6vw;
 }
 
 @media screen and (min-width: 700px) {
   .country-info h2 {
-    padding-top: 0px;
+    padding-top: 50px;
   }
 }
 
 .country-info h2, .opportunity-container div, .opportunity-container h3, .opportunity-container h4, .opportunity-container p, .opportunity-container button  {
   color: #fff;
-  opacity: 1;
-  transition: opacity .5s ease-in-out;
-  transition-delay: 300ms;
 }
 
 .hidden-div {
@@ -129,11 +126,19 @@ select option:first-child {
   color: #333;
 }
 
+.close-container-wrapper {
+  top: 0;
+  position: sticky;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: 0px 0px 34px 33px rgba(67, 64, 65, .99);
+  background: rgba(67, 64, 65, 1);
+  z-index: 2;
+}
+
 .close-container {
-    right: 20px;
-    position: sticky;
-    float: right;
-    top: 1px;
+    margin-right: 15px;
     font-size: 1.5em;
     font-weight: 900;
     color: #cacaca;
@@ -191,6 +196,16 @@ select option:first-child {
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 1;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: all .75s ease-in-out
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(-50px)
 }
 
 .country-info button {

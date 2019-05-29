@@ -55,22 +55,56 @@ function buildCountryContainer(container, country, countryData) {
     countryInfo.classList.add('country-info', 'hidden-div')
     countryInfo.setAttribute('id', 'current-country-info')
 
+    countryInfo.addEventListener('scroll', function(){
+        let pageTop = countryInfo.offsetTop
+        let pageBottom = pageTop + window.innerHeight
+        let tagsList = document.getElementById('opportunities-grid').querySelectorAll('*')
+        
+        for (let i = 0; i < tagsList.length; i++) {
+            let tag = tagsList[i]
+            let tagChildren = tag.children
+
+            for (let x = 0; x < tagChildren.length; x++) {
+                let thisTag = tagChildren[x]
+                let rect = thisTag.getBoundingClientRect()
+                
+                if (rect.top < (pageTop + 100)) {
+                    console.log(rect.top)
+                    thisTag.classList.add('fade-out')
+                    
+                    
+                } else {
+                    thisTag.classList.remove('fade-out')
+                }
+
+                
+
+            }
+        }
+    })
+
     let closeContainerButton = document.createElement('span')
+    let closeContainerDiv = document.createElement('div')
+    closeContainerDiv.classList.add('close-container-wrapper')
     closeContainerButton.innerHTML = 'x'
     closeContainerButton.classList.add('close-container')
-    countryInfo.appendChild(closeContainerButton)
+    closeContainerDiv.appendChild(closeContainerButton)
+    countryInfo.appendChild(closeContainerDiv)
     
 
     closeContainerButton.addEventListener("click", e => {
-        let nodeToClose = e.target.parentElement
+        let nodeToClose = e.target.parentElement.parentElement
         closeCountryContainer(nodeToClose)
     })
 
     let countryTitle = document.createElement('h2')
+    countryTitle.classList.add('fade-in')
     countryTitle.innerHTML = country
+
 
     let opportunitiesGrid = document.createElement('div')
     opportunitiesGrid.classList.add('opportunities-grid')
+    opportunitiesGrid.setAttribute('id', "opportunities-grid")
     countryInfo.appendChild(countryTitle)
     countryInfo.appendChild(opportunitiesGrid)
 
@@ -88,14 +122,18 @@ function buildCountryContainer(container, country, countryData) {
 
                 let oppContainer = document.createElement('div')
                 let oppHero = document.createElement('div')
-                let coverTitle = document.createElement('h3')
                 let fullTitle = document.createElement('h3')
                 let location = document.createElement('h4')
                 let time = document.createElement('p')
                 let description = document.createElement('p')
                 let actionButton = document.createElement('button')
-                let actionLink = document.createElement('a')
                 let actionLinkUrl = "window.open('" + opportunity.action_link + "')"
+
+                oppHero.classList.add('fade-in')
+                fullTitle.classList.add('fade-in')
+                location.classList.add('fade-in')
+                description.classList.add('fade-in')
+                actionButton.classList.add('fade-in')
                 
                 fullTitle.innerHTML = opportunity.full_title
                 location.innerHTML = opportunity.location + ' | ' + opportunity.time
