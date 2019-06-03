@@ -113,6 +113,7 @@ function buildCountryContainer(container, country, countryData) {
     function buildCountryInfo(countryList) {
         countryList.map(opportunity => {
 
+            console.log("link external set to yes?: " + opportunity.link_external)
             
                 let featuredImageUrl = opportunity.uagb_featured_image_src.full[0] ? 'url(' + opportunity.uagb_featured_image_src.medium_large[0] + ')' : 'url(' + '/wp-content/uploads/2019/05/GEM-square-only.png' + ')'
 
@@ -123,7 +124,7 @@ function buildCountryContainer(container, country, countryData) {
                 let time = document.createElement('p')
                 let description = document.createElement('p')
                 let actionButton = document.createElement('button')
-                let actionLinkUrl = "window.open('" + opportunity.action_link + "')"
+                let actionLinkUrl = opportunity.link_external == 1 ? "window.open('" + opportunity.action_link + "')" : "window.open('" + opportunity.link + "')"
 
                 oppHero.classList.add('fade-in')
                 fullTitle.classList.add('fade-in')
@@ -137,7 +138,7 @@ function buildCountryContainer(container, country, countryData) {
                 description.innerHTML = opportunity.description
                 actionButton.setAttribute('onclick', actionLinkUrl)
                 actionButton.setAttribute('target', "_blank")
-                actionButton.innerHTML = "Go Now!"
+                actionButton.innerHTML = "Learn More"
                 // actionButton.appendChild(actionLink)
 
                 oppContainer.classList.add('opportunity-container')

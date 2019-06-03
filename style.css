@@ -690,33 +690,51 @@ h2.subheading {
 /*-----------------------------------------------------------------------------
 4.0 Serving Opportunities Pods
 -----------------------------------------------------------------------------*/
-.serving-opportunity-list-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto; }
+@media screen and (min-width: 48em) {
+  .single-serving_opportunity .wrap #primary {
+    float: none;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .single-serving_opportunity .site-content {
+    padding-top: 0;
+  }
+}
+
+.single-serving_opportunity .wrap .entry-header {
+  padding: 0;
+}
+
+.serving-opportunity-container h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.serving-opportunity-container h3, .serving-opportunity-container p {
+  margin-left: 15px;
+  margin-right: 15px
+}
+
+@media screen and (min-width: 660px) {
+  .serving-opportunity-container h3, .serving-opportunity-container p {
+    margin-left: 0px;
+    margin-right: 0px
+  }
+}
 
 .serving-opportunity-cover {
   background-size: cover;
-  width: 90vw;
-  height: 90vw;
+  width: 100%;
   line-height: 300px;
   vertical-align: middle; }
 
-@media screen and (min-width: 500px) {
-  .serving-opportunity-cover {
-    height: 300px; } }
-
-@media screen and (min-width: 1000px) {
-  .serving-opportunity-cover {
-    width: 300px;
-    height: 300px; } }
-
 .serving-opportunity-cover h2 {
-  font-size: 6em;
+  color: #fff;
+  font-size: 1em;
   font-weight: 900;
-  line-height: 86px;
+  line-height: 1em;
   vertical-align: middle;
   display: inline-block;
   -webkit-box-pack: center;
@@ -732,7 +750,9 @@ h2.subheading {
 
 @media screen and (min-width: 1000px) {
   .serving-opportunity-cover h2 {
-    font-size: 7em;
+    color: #fff;
+    opacity: .8;
+    font-size: 1em;
     line-height: 88px; } }
 
 @media screen and (min-width: 1000px) {
@@ -755,6 +775,11 @@ h2.subheading {
 .serving-opportunity-data p {
   margin-bottom: 10px; }
 
+.serving-opportunity-container .short-description {
+  font-size: 1.2em;
+  font-weight: 100;
+}
+
 @media screen and (min-width: 1000px) {
   .serving-opportunity-data {
     margin-left: 10px; } }
@@ -776,20 +801,25 @@ h2.subheading {
   -webkit-transition: opacity .2s ease;
   transition: opacity .2s ease; }
 
-.serving-opportunity-description button a {
+.serving-opportunity-container button a {
   color: #fff;
   text-decoration: none;
   -webkit-box-shadow: none;
           box-shadow: none;
   font-size: 1.5em; }
 
-.serving-opportunity-description button {
+.serving-opportunity-container button {
   background-color: #86aa49;
   -webkit-transition: opacity .2s ease;
   transition: opacity .2s ease;
   margin-top: 20px;
-  padding: 20px; }
+  padding: 20px;
+  border-radius: 10px; }
 
 div.serving-opportunity-list-container:not(:last-of-type) {
   border-bottom: 1px solid #f6f9f0;
   margin-bottom: 40px; }
+
+  .centered {
+    text-align: center;
+  }

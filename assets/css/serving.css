@@ -14,6 +14,7 @@
 @media screen and (min-width: 800px) {
   .site-content-contain {
     background: url('/wp-content/uploads/2019/05/plane-wing-3.jpeg') center no-repeat;
+    background-size: cover;
   }
 }
 
@@ -259,9 +260,6 @@ select option:first-child {
 
 .fade-out {
   opacity: 0;
-  -webkit-transform: translateY(-50px);
-      -ms-transform: translateY(-50px);
-          transform: translateY(-50px)
 }
 
 .country-info button {

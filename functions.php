@@ -46,10 +46,11 @@ add_action( 'widgets_init', 'twentyseventeen_child_widgets_init' );
 		if(is_page('serving-opportunities') ) {
 			wp_enqueue_script('serving-js', '/wp-content/themes/twentyseventeen-child/assets/js/serving-js/serving.js', array('jquery', 'wp-api', 'handlebars'), '', true);
 		}
+		
+		wp_enqueue_script('fitty-dep-js', '/wp-content/themes/twentyseventeen-child/node_modules/fitty/dist/fitty.min.js', '', '', true);
 
-		if( is_page('home')) {
-			wp_enqueue_script('flext-text-js', '/wp-content/themes/twentyseventeen-child/assets/js/flext-text.js', '', true);
-		}
+		wp_enqueue_script('fitty-js', '/wp-content/themes/twentyseventeen-child/assets/js/fitty-script.js', '', '', true);
+		
 	
 }
 
@@ -61,7 +62,7 @@ function enqueue_custom_styles() {
 	}
 
 	if(is_page('three')) {
-		wp_enqueue_style( 'twenty-seventeen-child-serving-css', '/wp-content/themes/twentyseventeen-child/assets/css/three.css', false );
+		wp_enqueue_style( 'twenty-seventeen-child-three-css', '/wp-content/themes/twentyseventeen-child/assets/css/three.css', false );
 	}
 	 
 }
