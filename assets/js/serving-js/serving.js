@@ -69,7 +69,7 @@ function buildCountryContainer(container, country, countryData) {
                 let thisTag = tagChildren[x]
                 let rect = thisTag.getBoundingClientRect()
                 
-                if (rect.top < (pageTop + 50)) {
+                if (rect.top < (pageTop - 50)) {
                     thisTag.classList.add('fade-out')
                     
                 } else {
@@ -112,8 +112,6 @@ function buildCountryContainer(container, country, countryData) {
 
     function buildCountryInfo(countryList) {
         countryList.map(opportunity => {
-
-            console.log("link external set to yes?: " + opportunity.link_external)
             
                 let featuredImageUrl = opportunity.uagb_featured_image_src.full[0] ? 'url(' + opportunity.uagb_featured_image_src.medium_large[0] + ')' : 'url(' + '/wp-content/uploads/2019/05/GEM-square-only.png' + ')'
 
@@ -181,6 +179,7 @@ function closeCountryContainer (container) {
     let containerToClose = container
     containerToClose.classList.add('hidden-div')
     containerToClose.parentNode.classList.remove('full-width')
+    // console.log(containerToClose.parentNode)
     document.getElementById('form-group').classList.remove('blur')
     
 
@@ -200,3 +199,4 @@ function isDescendant(parent, child) {
     }
     return false;
 }
+
