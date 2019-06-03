@@ -820,6 +820,12 @@ div.serving-opportunity-list-container:not(:last-of-type) {
   border-bottom: 1px solid #f6f9f0;
   margin-bottom: 40px; }
 
-  .centered {
+.centered {
     text-align: center;
-  }
+}
+
+.invisible {
+  display: none;
+}
+
+
