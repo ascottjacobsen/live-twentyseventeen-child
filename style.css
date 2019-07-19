@@ -647,9 +647,9 @@ h2.subheading {
   grid-template-columns: 1fr 10fr 1fr;
   max-width: none; }
 
-.page-template-page-full-width .ugb-container .ugb-container__content-wrapper {
+/* .page-template-page-full-width .ugb-container .ugb-container__content-wrapper {
   padding-left: 15vw;
-  padding-right: 15vw; }
+  padding-right: 15vw; } */
 
 .section-container {
   grid-column-start: 1;
