@@ -97,12 +97,16 @@ function buildCountryContainer(container, country, countryData) {
     countryTitle.classList.add('fade-in')
     countryTitle.innerHTML = country
 
+    let opportunitiesGridWrapper = document.createElement('div')
+    opportunitiesGridWrapper.classList.add('opportunities-grid-wrapper')
+
 
     let opportunitiesGrid = document.createElement('div')
     opportunitiesGrid.classList.add('opportunities-grid')
     opportunitiesGrid.setAttribute('id', "opportunities-grid")
+    opportunitiesGridWrapper.appendChild(opportunitiesGrid)
     countryInfo.appendChild(countryTitle)
-    countryInfo.appendChild(opportunitiesGrid)
+    countryInfo.appendChild(opportunitiesGridWrapper)
 
     //add above nodes to the container
     container.appendChild(countryInfo)
