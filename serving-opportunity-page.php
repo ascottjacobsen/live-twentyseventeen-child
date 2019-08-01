@@ -24,8 +24,8 @@ get_header(); ?>
       <?php
       //get serving opportunities pod and build variables
       $servingPod = pods('serving_opportunity');
-      $servingPod->find('name ASC');
-      $countries = array("select a country");
+      $servingPod->find('name ASC', 'limit => -1');
+      $countries = array();
       ?>
       <?php while ( $servingPod->fetch() ) : ?>
         <?php
@@ -36,12 +36,14 @@ get_header(); ?>
       <?php endwhile; ?>
       
       <?php 
-        //Uniquify the array
-        $filteredCountries = array_unique($countries); 
+        //Uniquify the array and sort alphabetically
+        $filteredCountries = array_unique($countries);
+        natcasesort($filteredCountries);
       ?>
         <div class="form-group" id="form-group">
           <label for="exampleFormControlSelect1"><h2>Where to?</h2><p>Select a country to see how you could be part of GEM. <a href="/contact-us/?subject=interested-in-gem">Let us know</a> if you don't see what you're looking for.</p></label>
           <select class="form-control" id="country-select">
+            <option value="select a country">Select a country...</option>
             <?php
               // Loop through countries array
               foreach($filteredCountries as $value){
