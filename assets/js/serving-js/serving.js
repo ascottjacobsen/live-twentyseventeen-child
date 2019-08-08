@@ -35,7 +35,9 @@ function renderHTML(data, countryName) {
 }
 
 function buildCountryContainer(container, country, countryData) {
-    
+    //prevent body scrolling
+    document.getElementsByTagName('body')[0].classList.add('body-fixed')
+
     //build node to return message if no matches found
     let noMatchContainer = document.createElement('div')
     let noMatchMessage = document.createElement('p')
@@ -191,6 +193,7 @@ function closeCountryContainer (container) {
         containerToClose.remove()
     }, 200)
 
+    document.getElementsByTagName('body')[0].classList.remove('body-fixed')
 }
 
 function isDescendant(parent, child) {
