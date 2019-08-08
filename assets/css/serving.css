@@ -1,5 +1,6 @@
 .body-fixed {
   position: fixed;
+  width: 100%;
 }
 
 .site-content-contain {
@@ -103,6 +104,12 @@
   height: 95vh;
 }
 
+/* @media screen and (min-width: 700px) {
+  #country-info-container {
+    position: relative;
+  }
+} */
+
 .full-width {
   width: 100%;
 }
@@ -112,19 +119,23 @@
   height: calc(100vh - 37px);
   position: relative;
   padding-bottom: 110px;
-  /* margin: 60px auto 30px auto; */
-  /* border-radius: 10px; */
+  
   overflow-y: scroll;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(65, 64, 66, 1)), to(rgba(65, 64, 66, .8)));
-  background-image: -webkit-linear-gradient(rgba(65, 64, 66, 1), rgba(65, 64, 66, .8));
-  background-image: -o-linear-gradient(rgba(65, 64, 66, 1), rgba(65, 64, 66, .8));
-  background-image: linear-gradient(rgba(65, 64, 66, 1), rgba(65, 64, 66, .8));
+  background-color: rgba(65, 64, 66, .8);
   color: #fff;
   visibility: visible;
   opacity: 1;
   -webkit-transition: width .3s, height .3s, opacity .3s ease-in-out;
   -o-transition: width .3s, height .3s, opacity .3s ease-in-out;
   transition: width .3s, height .3s, opacity .3s ease-in-out;
+}
+
+@media screen and (min-width: 700px) {
+  .country-info {
+    width: 95vw;
+    margin: 60px auto 30px auto;
+    border-radius: 10px;
+  }
 }
 
 .country-info h2 {
@@ -176,11 +187,8 @@ select option:first-child {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-shadow: 0px 0px 34px 33px rgba(67, 64, 65, .99);
-          box-shadow: 0px 0px 34px 33px rgba(67, 64, 65, .99);
-  background: rgba(67, 64, 65, 1);
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   z-index: 2;
 }
 
@@ -213,9 +221,16 @@ select option:first-child {
 
 .opportunities-grid-wrapper {
   position: fixed;
-  top: 194px;
+  top: 192px;
   height: calc(100vh - 194px);
-  overflow: hidden;
+  overflow: scroll;
+}
+
+@media screen and (min-width: 700px) {
+  .opportunities-grid-wrapper {
+    width: 95vw;
+    top: 262px;
+  }
 }
 
 .opportunities-grid {
@@ -230,10 +245,19 @@ select option:first-child {
 .opportunities-grid {
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
-  overflow-y: scroll;
-  height: calc(100vh - 214px);
-  margin-bottom: 120px;
 }
+
+.grid-spacer {
+  height: 70px;
+  width: 100%;
+}
+
+@media screen and (min-width: 700px) {
+    .grid-spacer {
+      height: 100px;
+    }
+  }
+
 
 @media screen and (min-width: 845px) {
   .opportunities-grid {

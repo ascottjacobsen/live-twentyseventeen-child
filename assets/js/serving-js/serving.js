@@ -110,6 +110,10 @@ function buildCountryContainer(container, country, countryData) {
     countryInfo.appendChild(countryTitle)
     countryInfo.appendChild(opportunitiesGridWrapper)
 
+    let gridSpacer = document.createElement('div')
+    gridSpacer.classList.add('grid-spacer')
+    opportunitiesGridWrapper.appendChild(gridSpacer)
+
     //add above nodes to the container
     container.appendChild(countryInfo)
 
