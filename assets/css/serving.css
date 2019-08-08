@@ -248,13 +248,13 @@ select option:first-child {
 }
 
 .grid-spacer {
-  height: 70px;
+  height: 140px;
   width: 100%;
 }
 
 @media screen and (min-width: 700px) {
     .grid-spacer {
-      height: 100px;
+      height: 200px;
     }
   }
 
