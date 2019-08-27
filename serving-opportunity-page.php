@@ -40,6 +40,23 @@ get_header(); ?>
         $filteredCountries = array_unique($countries);
         natcasesort($filteredCountries);
       ?>
+        <div id="map-and-sphere-grid">
+
+            <div id="where-to-container">
+              <h2>Where To?</h2>
+              <p>Select a country to see how you could be a part of GEM.</p>
+              <p>Or search by opportunity type instead</p>
+              <div id="test">
+                <input type="checkbox" checked data-toggle="toggle" id="country-opp-switch">
+              </div>
+          </div>
+          <div id="the-big-map-container">
+            <?php 
+              echo file_get_contents( get_stylesheet_directory_uri() . '/assets/images/europe-map.svg' );
+            ?>
+          </div>
+        </div>
+        
         <div class="form-group" id="form-group">
           <label for="exampleFormControlSelect1"><h2>Where to?</h2><p>Select a country to see how you could be part of GEM. <a href="/contact-us/?subject=interested-in-gem">Let us know</a> if you don't see what you're looking for.</p></label>
           <select class="form-control" id="country-select">

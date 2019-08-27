@@ -211,3 +211,17 @@ function isDescendant(parent, child) {
     return false;
 }
 
+
+
+jQuery(function() {
+    jQuery('#country-opp-switch').bootstrapToggle({
+      on: 'Enabled',
+      off: 'Disabled'
+    });
+  })
+
+  jQuery(document).ready(function(){
+    jQuery("#country-opp-switch").click(function(){
+      alert("The paragraph was clicked.");
+    });
+  });

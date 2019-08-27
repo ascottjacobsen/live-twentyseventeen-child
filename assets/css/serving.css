@@ -1,3 +1,10 @@
+@media screen and (min-width: 700px) {
+  .navigation-top.site-navigation-fixed {
+    border-bottom: none;
+  }
+}
+
+
 .body-fixed {
   position: fixed;
   width: 100%;
@@ -342,4 +349,54 @@ select option:first-child {
   -ms-grid-row-span: 1;
   grid-row-end: 3;
   border: none;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+The Big Map Styles
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+#primary {
+  padding-top: 351px;
+}
+
+@media screen and (min-width: 700px) {
+  #primary {
+    padding-top: 231px;
+  }
+}
+
+@media screen and (min-width: 700px ) {
+  #map-and-sphere-grid {
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    width: 100vw;
+    align-items: center;
+  }
+}
+
+#where-to-container {
+  width: 100%;
+  padding: 20px 20px;
+  -webkit-box-shadow: 0px 10px 30px -20px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 10px 30px -20px rgba(0,0,0,1);
+  box-shadow: 0px 10px 30px -20px rgba(0,0,0,1);
+}
+
+
+
+#the-big-map-container {
+  /* background: pink; */
+}
+
+svg#Map {
+  z-index:-1;
+  display: block;
+  height: 100vw;
+}
+
+@media screen and (min-width:700px) {
+  svg#Map {
+    width: 70vw;
+  }
 }

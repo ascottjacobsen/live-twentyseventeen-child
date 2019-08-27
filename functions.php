@@ -35,20 +35,28 @@ function twentyseventeen_child_widgets_init() {
 add_action( 'widgets_init', 'twentyseventeen_child_widgets_init' );
 
 
- wp_register_script('handlebars', '/wp-content/themes/twentyseventeen-child/assets/js/serving-js/handlebars-v4.1.2.js');
+
 
  function load_js_assets() {
+
+		
 
 		if( is_page( 'contact-us' ) ) {
 			wp_enqueue_script('contact-js', '/wp-content/themes/twentyseventeen/assets/js/contact.js', array('jquery'), '', true);
 		}
 		
 		if(is_page('serving-opportunities') ) {
-			wp_enqueue_script('serving-js', '/wp-content/themes/twentyseventeen-child/assets/js/serving-js/serving.js', array('jquery', 'wp-api', 'handlebars'), '', true);
+			wp_enqueue_script('serving-js', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', '', '', true);
+			wp_enqueue_script('bootstrap-toggle-js', 'https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js', '', '', true);
+
+			
+			wp_enqueue_script('serving-js', '/wp-content/themes/twentyseventeen-child/assets/js/serving-js/serving.js', array('jquery'), '', true);
+
+			wp_register_script('test', get_stylesheet_directory_uri().'/assets/js/test.js', array('jquery') );
+			wp_enqueue_script('test');
 		}
 		
 		wp_enqueue_script('fitty-dep-js', '/wp-content/themes/twentyseventeen-child/node_modules/fitty/dist/fitty.min.js', '', '', true);
-
 		wp_enqueue_script('fitty-js', '/wp-content/themes/twentyseventeen-child/assets/js/fitty-script.js', '', '', true);
 		
 	
@@ -59,6 +67,8 @@ function enqueue_custom_styles() {
 	
 	if(is_page('serving-opportunities')) {
 		wp_enqueue_style( 'twenty-seventeen-child-serving-css', '/wp-content/themes/twentyseventeen-child/assets/css/serving.css', false );
+		wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', false );
+		wp_enqueue_style('bootstrap-toggle', 'https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css', false );
 	}
 
 	if(is_page('three')) {
