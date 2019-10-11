@@ -45,10 +45,10 @@ get_header(); ?>
             <div id="where-to-container">
               <h2>Where To?</h2>
               <p>Select a country to see how you could be a part of GEM.</p>
-              <p>Or search by opportunity type instead</p>
+              <!-- <p>Or search by opportunity type instead</p>
               <div id="toggle-box">
                 <input type="checkbox" checked data-toggle="toggle" id="country-opp-switch">
-              </div>
+              </div> -->
           </div>
           <div id="the-big-map-container">
             <?php 
