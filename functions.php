@@ -46,14 +46,24 @@ add_action( 'widgets_init', 'twentyseventeen_child_widgets_init' );
 		}
 		
 		if(is_page('serving-opportunities') ) {
-			wp_enqueue_script('serving-js', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', '', '', true);
+			wp_enqueue_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', '', '', true);
 			wp_enqueue_script('bootstrap-toggle-js', 'https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js', '', '', true);
 
-			
-			wp_enqueue_script('serving-js', '/wp-content/themes/twentyseventeen-child/assets/js/serving-js/serving.js', array('jquery'), '', true);
+			wp_register_script('serving', get_stylesheet_directory_uri().'/assets/js/serving-js/serving.js', array('jquery'), '', true );
+			wp_enqueue_script('serving');
 
-			wp_register_script('test', get_stylesheet_directory_uri().'/assets/js/test.js', array('jquery') );
-			wp_enqueue_script('test');
+			add_filter( 'script_loader_tag', 'add_type_module_to_serving', 10, 3 );
+ 
+			function add_type_module_to_serving( $tag, $handle, $src ) {
+				if ( 'serving' === $handle ) {
+					$tag = '<script type="module" src="' . esc_url( $src ) . '" id="serving-js"></script>';
+				}
+				return $tag;
+			}
+
+			// wp_register_script('country-hovers', get_stylesheet_directory_uri().'/assets/js/serving-js/country-hovers.js', array('jquery'), '', true );
+			// wp_enqueue_script('country-hovers');
+
 		}
 		
 		wp_enqueue_script('fitty-dep-js', '/wp-content/themes/twentyseventeen-child/node_modules/fitty/dist/fitty.min.js', '', '', true);

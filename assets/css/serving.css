@@ -1,5 +1,5 @@
 body {
-  touch-action: none;
+  /* touch-action: none; */
 }
 
 @media screen and (min-width: 700px) {
@@ -48,14 +48,14 @@ body {
   }
 }
 
-/* .site-main {
+.site-main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-} */
+}
 
 
 .form-group {
@@ -109,13 +109,14 @@ body {
 }
 
 .blur {
-  -webkit-filter: blur(2.4rem);
+  /* -webkit-filter: blur(2.4rem);
           filter: blur(2.4rem);
   -webkit-transition: -webkit-filter .2s;
   transition: -webkit-filter .2s;
   -o-transition: filter .2s;
   transition: filter .2s;
-  transition: filter .2s, -webkit-filter .2s;
+  transition: filter .2s, -webkit-filter .2s; */
+  opacity : 0;
 }
 
 #country-info-container {
@@ -130,11 +131,6 @@ body {
   height: 95vh;
 }
 
-/* @media screen and (min-width: 700px) {
-  #country-info-container {
-    position: relative;
-  }
-} */
 
 .full-width {
   width: 100%;
@@ -165,7 +161,12 @@ body {
 }
 
 .country-info h2 {
-  padding: 30px 6vw 0px 6vw;
+  padding: 30px 40px 0px 40px;
+  margin-bottom: 0;
+}
+
+.country-info h3 {
+  color: #fff
 }
 
 @media screen and (min-width: 700px) {
@@ -250,6 +251,7 @@ select option:first-child {
   top: 192px;
   height: calc(100vh - 194px);
   overflow: scroll;
+  padding: 0 40px;
 }
 
 @media screen and (min-width: 700px) {
@@ -265,7 +267,6 @@ select option:first-child {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-column-gap: 60px;
   grid-row-gap: 30px;
-  padding: 0 6vw;
 }
 
 .opportunities-grid {
@@ -292,7 +293,6 @@ select option:first-child {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-column-gap: 60px;
     grid-row-gap: 30px;
-    padding: 0 6vw;
   }
 }
 
@@ -375,6 +375,22 @@ The Big Map Styles
   /* padding-top: 351px; */
 }
 
+#focus-cities-group {
+  visibility: hidden;
+  opacity: 0
+}
+
+#focus-cities-group.show-focus-cities {
+  visibility: visible;
+  opacity: 1;
+  transition: all .2s ease-in-out
+
+}
+
+#map-and-sphere-grid {
+  background-color: #fff;
+}
+
 @media screen and (min-width: 1060px ) {
   #map-and-sphere-grid {
     background-color: #fff;
@@ -389,28 +405,96 @@ The Big Map Styles
 #where-to-container {
   flex: 1;
   width: 100%;
-  padding: 20px 0px 20px 20px;
+  padding: 20px 30px 20px 30px;
   -webkit-box-shadow: 0px 10px 30px -20px rgba(0,0,0,1);
   -moz-box-shadow: 0px 10px 30px -20px rgba(0,0,0,1);
   box-shadow: 0px 10px 30px -20px rgba(0,0,0,1);
+  transition: all 0.3s ease-in-out
   
+}
+
+#where-to-container h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 1060px) {
+
+  #where-to-container h2 {
+    font-size: 4rem;
+  }
+
+}
+
+#where-to-container p {
+  font-size: 1rem;
+  margin-bottom: 20px;
 }
 
 
 
 #the-big-map-container {
-  flex: 3;
-  min-width: 845px;
+  flex: 2;
+  overflow: scroll;
+  text-align: end;
+  max-width: 100vw;
   
 }
 
 svg#Map {
-  height: 100%;
-  float:right;
+  width: 150vw;
+  touch-action: pan-x pan-y pinch-zoom;
 }
+
+svg#Map .has-opportunities, svg#Map .has-opportunities path {
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.has-opportunities:hover, .has-opportunities:hover path {
+  fill: rgb(134, 170, 74);
+  -webkit-box-shadow: 10px 10px 97px -2px rgba(0,0,0,0.36);
+  -moz-box-shadow: 10px 10px 97px -2px rgba(0,0,0,0.36);
+  box-shadow: 10px 10px 97px -2px rgba(0,0,0,0.36);
+}
+
+
+@media screen and (min-width: 1060px ) {
+  svg#Map {
+    width: inherit;
+    height: 100vh;
+  }
+}
+
 
 #Isle_of_Man {
   display: none;
+}
+
+.hide-country-title {
+  display: none;
+}
+
+#country-hover-title {
+  margin: 0;
+  padding: 0;
+  font-weight: 900;
+  font-size: 1.5em;
+  line-height: 0;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
+  transition: all 0.5s ease-in-out
+}
+
+.hide {
+  opacity: 0;
+}
+
+path.low-opacity {
+  opacity: 0.1;
+}
+
+g.full-opacity, path.full-opacity {
+  opacity: 1;
 }
 
 
