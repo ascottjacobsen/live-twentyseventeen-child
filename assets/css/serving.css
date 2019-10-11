@@ -497,9 +497,6 @@ g.full-opacity, path.full-opacity {
   opacity: 1;
 }
 
-
-/* @media screen and (min-width:700px) {
-  svg#Map {
-    width: 70vw;
-  }
-} */
+#country-hover-title {
+  line-height: 1;
+}
