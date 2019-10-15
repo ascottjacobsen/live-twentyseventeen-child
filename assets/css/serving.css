@@ -138,7 +138,7 @@ body {
 
 .country-info {
   width: 100vw;
-  height: calc(100vh - 37px);
+  height: calc(100vh - 30px);
   position: relative;
   padding-bottom: 110px;
   
@@ -162,7 +162,8 @@ body {
 
 .country-info h2 {
   padding: 30px 40px 0px 40px;
-  margin-bottom: 0;
+  margin-bottom: 25px;
+  font-size: 2em;
 }
 
 .country-info h3 {
