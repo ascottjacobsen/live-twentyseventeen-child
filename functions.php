@@ -46,10 +46,14 @@ add_action( 'widgets_init', 'twentyseventeen_child_widgets_init' );
 		}
 		
 		if(is_page('serving-opportunities') ) {
-			wp_enqueue_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', '', '', true);
-			wp_enqueue_script('bootstrap-toggle-js', 'https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js', '', '', true);
 
-			wp_register_script('serving', get_stylesheet_directory_uri().'/assets/js/serving-js/serving.js', array('jquery'), '', true );
+	
+			wp_register_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', '','', true);
+			wp_register_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', '','', true);
+			wp_register_script('bootstrap-toggle-js', 'https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js', '','', true);
+			// wp_enqueue_script('switch-control', get_stylesheet_directory_uri().'/assets/js/serving-js/switch-control.js', array('jquery'), '', true);
+
+			wp_register_script('serving', get_stylesheet_directory_uri().'/assets/js/serving-js/serving.js', array('popper','bootstrap', 'bootstrap-toggle-js'), '', true );
 			wp_enqueue_script('serving');
 
 			add_filter( 'script_loader_tag', 'add_type_module_to_serving', 10, 3 );
@@ -60,9 +64,6 @@ add_action( 'widgets_init', 'twentyseventeen_child_widgets_init' );
 				}
 				return $tag;
 			}
-
-			// wp_register_script('country-hovers', get_stylesheet_directory_uri().'/assets/js/serving-js/country-hovers.js', array('jquery'), '', true );
-			// wp_enqueue_script('country-hovers');
 
 		}
 		

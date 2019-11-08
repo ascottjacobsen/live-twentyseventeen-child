@@ -35,10 +35,9 @@ return uniqueCountriesArray
 
 //add available has-opportunities CSS class to matching ids. Also add mouseEnter and Exit listners
 export function addCountryHovers (data) {
-console.log(data)
+
 data.forEach(country => {
     document.getElementById(country).classList.add('has-opportunities')
-    console.log(country)
     removeCountryDims(country)
     document.getElementById(country).addEventListener("mouseenter", function(e) {
         buildCountryHoverTitle(e, country)

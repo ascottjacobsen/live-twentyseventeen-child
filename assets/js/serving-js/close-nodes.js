@@ -19,6 +19,7 @@ export function blurObject(element) {
 
 export function hideObject(element) {
     document.getElementById(element.id).classList.add('hide')
+    console.log('hiding ' + element.classList)
 }
 
 export function removeNode (element) {

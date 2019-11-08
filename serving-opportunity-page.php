@@ -21,6 +21,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
     <section >
+    
       <?php
       //get serving opportunities pod and build variables
       $servingPod = pods('serving_opportunity');
@@ -45,16 +46,30 @@ get_header(); ?>
             <div id="where-to-container">
               <h2>Where To?</h2>
               <p>Select a country to see how you could be a part of GEM.</p>
-              <!-- <p>Or search by opportunity type instead</p>
-              <div id="toggle-box">
-                <input type="checkbox" checked data-toggle="toggle" id="country-opp-switch">
+              <p>Or search by <span id="country-or-sphere-text">ministry sphere</span> instead:</p>
+              <!-- <div id="toggle-box" class="checkbox">
+                <input id="toggle-one" type="checkbox" checked data-toggle="toggle" >
+                
               </div> -->
-          </div>
-          <div id="the-big-map-container">
+
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary active">
+                  <input type="radio" name="options" id="option1" autocomplete="off" checked> Search By Country
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="options" id="option2" autocomplete="off"> Search By Ministry Sphere
+                </label>
+              </div>
+            </div>
+          <div id="the-big-map-container" class="right-align-map">
             <?php 
               echo file_get_contents( get_stylesheet_directory_uri() . '/assets/images/europe-map.svg' );
             ?>
+            <?php 
+              echo file_get_contents( get_stylesheet_directory_uri() . '/assets/images/gem-spheres.svg' );
+            ?>
           </div>
+          
         </div>
         
         <div class="form-group" id="form-group">

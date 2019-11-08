@@ -180,6 +180,8 @@ function buildCountryOrRegion(data, country, container, searchByRegion) {
       );
       let element = document.createElement("h3");
       element.innerHTML = country;
+      element.classList.add('h3-title-large')
+
       container.append(element);
 
       //Actual opportunities grid
