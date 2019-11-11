@@ -163,15 +163,22 @@ body {
 .country-info h2 {
   padding: 30px 40px 0px 40px;
   margin-bottom: 25px;
-  font-size: 2em;
+  font-size: 1.6rem;
 }
+
+@media screen and (min-width: 350px) {
+  .country-info h2 {
+    font-size: 1.7rem;
+  }
+}
+
 
 .country-info h3 {
   color: #fff
 }
 
 h3.h3-title-large {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 @media screen and (min-width: 700px) {
