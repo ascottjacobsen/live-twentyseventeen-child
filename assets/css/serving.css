@@ -179,6 +179,7 @@ body {
 
 h3.h3-title-large {
   font-size: 1.5rem;
+  margin-top: 10px;
 }
 
 @media screen and (min-width: 700px) {
