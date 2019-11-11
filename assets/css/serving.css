@@ -260,8 +260,8 @@ select option:first-child {
 
 .opportunities-grid-wrapper {
   position: fixed;
-  top: 192px;
-  height: calc(100vh - 194px);
+  top: 210px;
+  height: calc(100vh - 210px);
   overflow: scroll;
   padding: 0 40px;
 }
