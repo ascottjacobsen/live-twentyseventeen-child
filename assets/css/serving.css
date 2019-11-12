@@ -14,7 +14,8 @@ body {
   width: 100%;
   height: 100%;
   overflow-y: hidden;
-  overscroll-behavior: none;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
 }
 
 @media screen and (min-width: 48em) {
@@ -408,6 +409,8 @@ The Big Map Styles
 #focus-cities-group.show-focus-cities {
   visibility: visible;
   opacity: 1;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out
 
 }
@@ -422,23 +425,32 @@ The Big Map Styles
 @media screen and (min-width: 1060px ) {
   #map-and-sphere-grid {
     background-color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     width: 100vw;
     height: calc(100vh - 77px);
-    align-items: stretch;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
   }
 }
 
 
 
 #where-to-container {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   width: 100%;
   padding: 20px 30px 20px 30px;
   -webkit-box-shadow: 0px 10px 30px -20px rgba(0,0,0,1);
-  -moz-box-shadow: 0px 10px 30px -20px rgba(0,0,0,1);
   box-shadow: 0px 10px 30px -20px rgba(0,0,0,1);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out
   
 }
@@ -464,7 +476,9 @@ The Big Map Styles
 
 
 #the-big-map-container {
-  flex: 2;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
   overflow: scroll;
   max-width: 100vw;
   
@@ -484,25 +498,31 @@ The Big Map Styles
 
 svg#Map {
   width: 150vw;
-  touch-action: pan-x pan-y pinch-zoom;
+  -ms-touch-action: pan-x pan-y pinch-zoom;
+      touch-action: pan-x pan-y pinch-zoom;
   position: relative;
+  -webkit-transition: opacity .3s ease;
+  -o-transition: opacity .3s ease;
   transition: opacity .3s ease;
 }
 
 svg#Map .has-opportunities {
   cursor: pointer;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
 
 svg#Map .has-opportunities path {
   cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
 }
 
 .has-opportunities:hover, .has-opportunities:hover path {
   fill: rgb(134, 170, 74);
   -webkit-box-shadow: 10px 10px 97px -2px rgba(0,0,0,0.36);
-  -moz-box-shadow: 10px 10px 97px -2px rgba(0,0,0,0.36);
   box-shadow: 10px 10px 97px -2px rgba(0,0,0,0.36);
 }
 
@@ -530,6 +550,8 @@ svg#Map .has-opportunities path {
   font-size: 1.5em;
   line-height: 0;
   text-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out
 }
 
@@ -557,10 +579,14 @@ g.full-opacity, path.full-opacity {
 #the-spheres {
   max-width: 1020px;
   position: relative;
+  -webkit-transition: opacity .3s ease;
+  -o-transition: opacity .3s ease;
   transition: opacity .3s ease;
 }
 
 #the-spheres g g {
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
 
@@ -582,7 +608,8 @@ g.full-opacity, path.full-opacity {
 }
 
 .animated-graphic {
-  animation: slide-from-right .5s cubic-bezier(0.25, 0.1, 0.01, 1) forwards;
+  -webkit-animation: slide-from-right .5s cubic-bezier(0.25, 0.1, 0.01, 1) forwards;
+          animation: slide-from-right .5s cubic-bezier(0.25, 0.1, 0.01, 1) forwards;
 }
 
 .invisible {
