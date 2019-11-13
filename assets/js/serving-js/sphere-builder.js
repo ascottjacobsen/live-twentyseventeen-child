@@ -64,6 +64,8 @@ import {
     sphereTitle.classList.add("fade-in", "container-title");
     if (sphere === "sports-music-art") {
       sphereTitle.innerHTML = "Sports, Music & Art"
+    } else if (sphere === "gem-uk-team") {
+      sphereTitle.innerHTML = "GEM UK Team"    
     } else {
       sphereTitle.innerHTML = sphere.replace(/-/g, " ");
     }
