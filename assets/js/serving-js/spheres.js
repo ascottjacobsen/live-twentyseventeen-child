@@ -28,7 +28,8 @@ function addClickListeners (array, data) {
         document.getElementById(sphere).classList.remove('sphere-without-opportunities')
         document.getElementById(sphere).classList.add('sphere-with-opportunities')
         document.getElementById(sphere).addEventListener('click', function (){
-            let thisSphereData = data.filter(opp => sphere === opp.sphere[0])
+            //I need to loop through the array of spheres to match the id of the clicked one
+            let thisSphereData = data.filter(opp => opp.sphere.includes(sphere))
             buildSphereContainer(document.getElementById('country-info-container'), thisSphereData, sphere, true)
         })
     })

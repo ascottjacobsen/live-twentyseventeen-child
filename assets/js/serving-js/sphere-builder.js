@@ -184,7 +184,6 @@ import {
 
   
   function buildSphereInfo (data, sphere, container) {
-    
     let listOfCountries = []
     data.forEach(opp => listOfCountries.push(opp.country[0]))
     let uniqueListOfCountries = [... new Set(listOfCountries)]
