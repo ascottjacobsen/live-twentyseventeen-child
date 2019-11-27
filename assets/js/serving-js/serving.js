@@ -34,7 +34,7 @@ function setupAvailableCountriesAndSpheres() {
   let requestCountries = new XMLHttpRequest();
   requestCountries.open(
     "GET",
-    "/wp-json/wp/v2/serving_opportunity/?per_page=100"
+    "https://gemission.org.uk/wp-json/wp/v2/serving_opportunity/?per_page=100"
   );
   requestCountries.onload = function() {
     opportunitiesData = JSON.parse(requestCountries.responseText);
