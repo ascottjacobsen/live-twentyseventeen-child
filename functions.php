@@ -42,10 +42,10 @@ add_action( 'widgets_init', 'twentyseventeen_child_widgets_init' );
 		
 
 		if( is_page( 'contact-us' ) ) {
-			wp_enqueue_script('contact-js', '/wp-content/themes/twentyseventeen/assets/js/contact.js', array('jquery'), '', true);
+			wp_enqueue_script('contact-js', '/wp-content/themes/twentyseventeen-child/assets/js/contact.js', array('jquery'), '', true);
 		}
 		
-		if(is_page('serving-opportunities') ) {
+		if(is_page_template('serving-opportunity-page.php')) {
 
 	
 			wp_register_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', '','', true);
@@ -76,7 +76,7 @@ add_action( 'widgets_init', 'twentyseventeen_child_widgets_init' );
 
 function enqueue_custom_styles() {
 	
-	if(is_page('serving-opportunities')) {
+	if(is_page_template('serving-opportunity-page.php')) {
 		wp_enqueue_style( 'twenty-seventeen-child-serving-css', '/wp-content/themes/twentyseventeen-child/assets/css/serving.css', false );
 		wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', false );
 		wp_enqueue_style('bootstrap-toggle', 'https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css', false );
