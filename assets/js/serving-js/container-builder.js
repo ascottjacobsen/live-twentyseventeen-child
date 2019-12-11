@@ -105,11 +105,11 @@ function buildCountryInfo(countryList, grid) {
     let time = document.createElement("p");
     let description = document.createElement("p");
     let actionButton = document.createElement("button");
+    
     let actionLinkUrl =
       opportunity.link_external == 1
         ? "window.open('" + opportunity.action_link + "')"
-        : "window.open('" + opportunity.link + "')";
-
+        : "window.open('" + opportunity.link.split("https://gemission.org.uk")[1] + "')";
     oppHero.classList.add("fade-in");
     fullTitle.classList.add("fade-in");
     location.classList.add("fade-in");
