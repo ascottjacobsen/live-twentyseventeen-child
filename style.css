@@ -32,7 +32,8 @@ h2 {
 /*-----------------------------------------------------------------------------
 2.0 Front Page Header & Site Branding Area
 -----------------------------------------------------------------------------*/
-/* reset custom-header-media pseudo element HEIGHT from parent style.css */
+
+/* Reset custom-header-media pseudo element HEIGHT from parent style.css. This was causing a difference in darkness for background image overlay */
 @media screen and (min-width: 48em){
   .twentyseventeen-front-page.has-header-image .custom-header-media:before {
     height: 100%
@@ -49,7 +50,7 @@ h2 {
 
 .home .site-branding {
   display: inherit;
-  background: rgba(0, 0, 0, 0.50196);
+  /* background: rgba(0, 0, 0, 0.50196); */
   text-align: center;
   }
 
