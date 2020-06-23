@@ -864,3 +864,34 @@ div.serving-opportunity-list-container:not(:last-of-type) {
   color: #FF6037
 }
 
+/*-----------------------------------------------------------------------------
+5.0 Blog Posts
+-----------------------------------------------------------------------------*/
+.post-img-container {
+  border-radius: 12px;
+  height: 400px;
+  margin-bottom: 20px;
+  margin-top: -60px;
+  overflow: hidden;
+  position: relative;
+}
+
+.post-img-container img {
+  left: 50%;
+  position: absolute;
+  top: 50%
+  transform: translate(-50%, -50%);
+  width: 100%;
+
+}
+
+@media screen and (max-width: 767px) {
+  .post-img-container {
+    margin-top: -20px;
+  }
+}
+
+.entry-meta {
+  color:  #86aa49;
+  text-transform: capitalize;
+}
