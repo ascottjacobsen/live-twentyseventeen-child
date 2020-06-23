@@ -870,7 +870,7 @@ div.serving-opportunity-list-container:not(:last-of-type) {
 .post-img-container {
   border-radius: 12px;
   height: 400px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   margin-top: -60px;
   overflow: hidden;
   position: relative;
@@ -892,6 +892,28 @@ div.serving-opportunity-list-container:not(:last-of-type) {
 }
 
 .entry-meta {
-  color:  #86aa49;
+  color: #86aa49;
   text-transform: capitalize;
+}
+
+.blog-back-btn: {
+  margin-bottom: 20px;
+}
+
+.blog-back-btn a svg {
+  fill: #222222;
+  padding-right: 16px;
+  width: 24px;
+}
+
+.blog-back-btn a {
+  background-color: #86aa49;
+  border-radius: 10px;
+  color: #222222;
+  font-size: 18px;
+  padding: 8px 26px;
+}
+
+.blog-back-btn a:hover {
+  opacity: 0.8;
 }
