@@ -863,7 +863,6 @@ div.serving-opportunity-list-container:not(:last-of-type) {
   font-weight: 900;
   color: #FF6037
 }
-
 /*-----------------------------------------------------------------------------
 5.0 Blog Posts
 -----------------------------------------------------------------------------*/
@@ -897,13 +896,14 @@ div.serving-opportunity-list-container:not(:last-of-type) {
 }
 
 .blog-back-btn: {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .blog-back-btn a svg {
   fill: #222222;
   padding-right: 16px;
-  width: 24px;
+  vertical-align: middle;
+  width: 30px;
 }
 
 .blog-back-btn a {
